@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="219552ac-8387-4bea-a50c-a1dba5ded759" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.apt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.validation.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.springframework.ide.eclipse.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel#45.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Hotel#45.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/hotel45_db.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/org/queuecumbers/hotel45/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/org/queuecumbers/hotel45/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/org/queuecumbers/hotel45/persistence/dao/GenericJpaDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/org/queuecumbers/hotel45/persistence/model/AbstractModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/org/queuecumbers/hotel45/persistence/model/Booking.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/org/queuecumbers/hotel45/persistence/model/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/org/queuecumbers/hotel45/persistence/model/Room.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/queuecumbers/hotel45/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/queuecumbers/hotel45/Tests/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/queuecumbers/hotel45/persistence/dao/Dao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/queuecumbers/hotel45/persistence/dao/GenericJpaDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/queuecumbers/hotel45/persistence/model/Booking.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/queuecumbers/hotel45/persistence/model/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/queuecumbers/hotel45/persistence/model/Room.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/queuecumbers/hotel45/persistence/persistence/controllers/CustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/hotel45.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/queuecumbers/hotel45/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/queuecumbers/hotel45/Tests/MainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/queuecumbers/hotel45/persistence/dao/Dao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/queuecumbers/hotel45/persistence/dao/GenericJpaDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/queuecumbers/hotel45/persistence/model/Booking.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/queuecumbers/hotel45/persistence/model/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/queuecumbers/hotel45/persistence/model/Room.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/queuecumbers/hotel45/persistence/persistence/controllers/CustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1hdUf3yq2KvnzhLnQ5dyA2pkKE2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Udemy/Projetos/hotel45" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="219552ac-8387-4bea-a50c-a1dba5ded759" name="Default Changelist" comment="" />
+      <created>1600340562798</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600340562798</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1600340641234">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600340641234" />
+  </component>
+</project>
