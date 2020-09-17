@@ -1,40 +1,41 @@
 package com.hotel45.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hotel45.model.Booking;
 import com.hotel45.model.Customer;
+import com.hotel45.model.Room;
+import com.hotel45.other.ServiceClass;
 
 @RestController
-@RequestMapping(value = "/api/customers")
+@RequestMapping(value = "/api")
 public class CustomerController {
+	
+	@Autowired
+	private ServiceClass service;
 
-		@RequestMapping(method=RequestMethod.GET)
-		public List<Customer> list() {
-			
-			Customer c1 = new Customer();
-			c1.setFirstName("Dani");
-			c1.setLastName("Valente");
-			c1.setAddress("Av Antonio Augusto de Aguiar, 126");
-			c1.setEmail("ddani.daraujo@gmail.com");
-			c1.setPhone("+351 93512 5220");
-			
-			Customer c2 = new Customer();
-			c2.setFirstName("Carlos");
-			c2.setLastName("Rocha");
-			c2.setAddress("Lisboa");
-			c2.setEmail("carlosrocha@gmail.com");
-			c2.setPhone("+351 95214 2550");
-			
-			List<Customer> list = new ArrayList<>();
-			list.add(c1);
-			list.add(c2);
-			
-			return list;
+		@RequestMapping(method=RequestMethod.GET, value = "/customers")
+		public ResponseEntity<?> listAllCustomers() {
+			List<Customer> listCustomers = service.findAllCustomers();
+			return ResponseEntity.ok().body(listCustomers);
 		}
 		
+		
+		@RequestMapping(method=RequestMethod.GET, value = "/rooms")
+		public ResponseEntity<?> listAllRooms() {
+			List<Room> listRooms = service.findAllRooms();
+			return ResponseEntity.ok().body(listRooms);
+		}
+		
+		@RequestMapping(method=RequestMethod.GET, value = "/bookings")
+		public ResponseEntity<?> listAllBookings() {
+			List<Booking> listBookings = service.findAllBookings();
+			return ResponseEntity.ok().body(listBookings);
+		}
 }

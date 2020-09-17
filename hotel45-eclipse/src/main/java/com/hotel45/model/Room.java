@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,56 +13,75 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.hotel45.other.TypeOfRoom;
+
 @Entity
-@Table (name = "room")
+@Table(name = "room")
 public class Room implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-	
-    private String typeOfRoom;
-    private Integer costPerDay;
-    
-    public Room() {
-    	
-    }
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 
-    public Room(Integer id, String typeOfRoom, Integer costPerDay, List<Booking> bookingList) {
+	@Enumerated(EnumType.STRING)
+	private TypeOfRoom typeOfRoom;
+	private double costPerDay;
+	private boolean isOccupied;
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "room")
+	private List<Booking> bookingList;
+
+	public Room() {
+
+	}
+
+	public Room(TypeOfRoom typeOfRoom, double costPerDay, boolean isOccupied) {
 		super();
-		this.id = id;
 		this.typeOfRoom = typeOfRoom;
 		this.costPerDay = costPerDay;
+		this.isOccupied = isOccupied;
+	}
+
+	public boolean isOccupied() {
+		return isOccupied;
+	}
+
+	public void setOccupied(boolean isOccupied) {
+		this.isOccupied = isOccupied;
+	}
+
+	public List<Booking> getBookingList() {
+		return bookingList;
+	}
+
+	public void setBookingList(List<Booking> bookingList) {
 		this.bookingList = bookingList;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "room")
-    private List<Booking> bookingList;
+	public TypeOfRoom getTypeOfRoom() {
+		return typeOfRoom;
+	}
 
-    public String getTypeOfRoom() {
-        return typeOfRoom;
-    }
+	public void setTypeOfRoom(TypeOfRoom typeOfRoom) {
+		this.typeOfRoom = typeOfRoom;
+	}
 
-    public void setTypeOfRoom(String typeOfRoom) {
-        this.typeOfRoom = typeOfRoom;
-    }
+	public double getCostPerDay() {
+		return costPerDay;
+	}
 
-    public Integer getCostPerDay() {
-        return costPerDay;
-    }
+	public void setCostPerDay(double costPerDay) {
+		this.costPerDay = costPerDay;
+	}
 
-    public void setCostPerDay(Integer costPerDay) {
-        this.costPerDay = costPerDay;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	@Override
 	public int hashCode() {
@@ -86,7 +107,5 @@ public class Room implements Serializable {
 			return false;
 		return true;
 	}
-    
-    
-    
+
 }

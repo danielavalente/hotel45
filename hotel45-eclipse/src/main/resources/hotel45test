@@ -1,0 +1,17 @@
+INSERT INTO room VALUES (null, 50, true, 'ECONOMIC');
+INSERT INTO room VALUES (null, 100, false, 'EXECUTIVE');
+INSERT INTO room VALUES (null, 200, true, 'LUXURY');
+
+INSERT INTO customer
+VALUES (null, 'Rio de Janeiro', 'ddani.daraujo@gmail.com', 'Dani', 'Valente', '+351 93512 5220');
+INSERT INTO customer
+VALUES (null, 'Lisboa', 'carlosrocha@gmail.com', 'Carlos', 'Rocha', '+351 95214 2550');
+INSERT INTO customer
+VALUES (null, 'Madri', 'andrepisco@gmail.com', 'Andre', 'Pisco', '+351 95874 1475');
+
+INSERT INTO booking
+VALUES (null, '2020-09-15', '2020-09-20', 500, 1,2);
+INSERT INTO booking
+VALUES (null, '2020-09-25', '2020-09-30', 500, 2,2);
+INSERT INTO booking
+VALUES (null, '2020-10-09', '2020-10-10', 200, 1,3);

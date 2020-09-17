@@ -1,11 +1,14 @@
 package com.hotel45.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,19 +26,30 @@ public class Customer implements Serializable {
     private String phone;
     private String email;
     
-    public Customer() {
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
+	private List<Booking> bookingList;
+    
+    public Customer()  {
     	
     }
     
-	public Customer(Integer id, String firstName, String lastName, String address, String phone, String email) {
+	public Customer(String firstName, String lastName, String address, String phone, String email) {
 		super();
-		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		Address = address;
 		this.phone = phone;
 		this.email = email;
 	}
+	
+	public List<Booking> getBookingList() {
+		return bookingList;
+	}
+
+	public void setBookingList(List<Booking> bookingList) {
+		this.bookingList = bookingList;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
