@@ -1,30 +1,43 @@
 package org.queuecumbers.hotel45.persistence.dao;
 
-public abstract class GenericJpaDao<T> {
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import java.util.List;
 
-    private T modelType;
+public abstract class GenericJpaDao<T> implements Dao<T> {
 
-    public GenericJpaDao(T modelType) {
+    private Class<T> modelType;
+
+    @PersistenceContext
+    protected EntityManager em;
+
+    public GenericJpaDao(Class<T> modelType){
         this.modelType = modelType;
-    };
+    }
 
-    public T findAll() {
+    public void setEm(EntityManager em) {
+        this.em = em;
+    }
 
-    };
+    @Override
+    public List<T> findAll() {
+        return null;
+    }
 
+    @Override
     public T findById(Integer id) {
+        return null;
+    }
 
-    };
+    @Override
+    public T saveOrUpdate(T object) {
+        return null;
+    }
 
-    public T saveOrUpdate(T modelType) {
+    @Override
+    public void delete(Integer id) {
 
-    };
-
-    public T delete(Integer id) {
-
-    };
-
-
+    }
 }
 
 
