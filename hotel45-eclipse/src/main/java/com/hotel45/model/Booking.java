@@ -22,12 +22,10 @@ public class Booking implements Serializable {
 	
     @ManyToOne
     @JoinColumn(name = "customer_id")
-    @JsonIgnore
     private Customer customer;
 
     @ManyToOne
     @JoinColumn(name = "room_id")
-    @JsonIgnore
     private Room room;
 
     private LocalDate checkInDate;
