@@ -54,6 +54,13 @@ public class Hotel45Application implements CommandLineRunner {
 		Booking booking4 = new Booking(customer1, room3, LocalDate.of(2020, 8, 1), LocalDate.of(2020, 9, 3), 1000);
 		
 		
+//		room1.getBookingList().addAll(Arrays.asList(booking1, booking2));
+//		room2.getBookingList().addAll(Arrays.asList(booking3));
+//		room3.getBookingList().addAll(Arrays.asList(booking4));
+//		
+//		customer1.getBookingList().addAll(Arrays.asList(booking1, booking3, booking4));
+//		customer2.getBookingList().addAll(Arrays.asList(booking2));
+		
 		
 		roomDao.saveAll(Arrays.asList(room1, room2, room3));
 		customerDao.saveAll(Arrays.asList(customer1, customer2, customer3, customer4));
