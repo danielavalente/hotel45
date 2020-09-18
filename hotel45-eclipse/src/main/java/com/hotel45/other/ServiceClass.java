@@ -58,5 +58,9 @@ public class ServiceClass {
 		Optional<Room> room = roomDao.findById(id);
 		return room;
 	}
+	
+	public Room saveRoom(Room room) {
+		return roomDao.save(room);
+	}
 
 }
