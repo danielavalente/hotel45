@@ -1,0 +1,29 @@
+* {
+    margin: 0px;
+    padding: 0%;
+}
+
+body {
+    height: 100%;
+}
+
+.column1 {
+    float:left;
+    width:15%;
+    height: 100%;
+}
+
+.column2 {
+    float: right;
+    width:85%;
+}
+
+.row:after {
+    content:"";
+    display: table;
+    clear:both;
+}
+
+.innerLeft {
+    margin: 25px;
+}
