@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.hotel45.other.TypeOfRoom;
 
 @Entity
@@ -30,6 +31,7 @@ public class Room implements Serializable {
 	private boolean isOccupied;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "room")
+	@JsonIgnore
 	private List<Booking> bookingList;
 
 	public Room() {

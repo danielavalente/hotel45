@@ -1,16 +1,16 @@
 package com.hotel45.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hotel45.model.Booking;
 import com.hotel45.model.Customer;
-import com.hotel45.model.Room;
 import com.hotel45.other.ServiceClass;
 
 @RestController
@@ -26,16 +26,9 @@ public class CustomerController {
 			return ResponseEntity.ok().body(listCustomers);
 		}
 		
-		
-		@RequestMapping(method=RequestMethod.GET, value = "/rooms")
-		public ResponseEntity<?> listAllRooms() {
-			List<Room> listRooms = service.findAllRooms();
-			return ResponseEntity.ok().body(listRooms);
-		}
-		
-		@RequestMapping(method=RequestMethod.GET, value = "/bookings")
-		public ResponseEntity<?> listAllBookings() {
-			List<Booking> listBookings = service.findAllBookings();
-			return ResponseEntity.ok().body(listBookings);
+		@RequestMapping(method=RequestMethod.GET, value = "/customers/{id}")
+		public ResponseEntity<?> roomById(@PathVariable Integer id) {
+			Optional<Customer> customer = service.customerById(id);
+			return ResponseEntity.ok().body(customer);
 		}
 }
