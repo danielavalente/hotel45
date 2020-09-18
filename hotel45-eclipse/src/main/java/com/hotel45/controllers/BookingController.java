@@ -44,5 +44,18 @@ public class BookingController {
 		return ResponseEntity.ok().body(newBooking);
 		
 	}
+	
+	@RequestMapping(method=RequestMethod.GET, value = "/customers/bookings={id}")
+	public ResponseEntity<?> listAllClientBookings(@PathVariable Integer id) {
+		List<Booking> customersFound = service.findAllCustomerBookings(id);
+		return ResponseEntity.ok().body(customersFound);
+	}
+	
+	@RequestMapping(method=RequestMethod.GET, value = "/customers/bookingsfoward={id}")
+	public ResponseEntity<?> listFowardClientBookings(@PathVariable Integer id) {
+		List<Booking> customersFound = service.findFowardCustomerBookings(id);
+		return ResponseEntity.ok().body(customersFound);
+	}
+
 
 }

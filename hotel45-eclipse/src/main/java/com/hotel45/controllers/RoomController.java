@@ -5,7 +5,9 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -35,10 +37,18 @@ public class RoomController {
 		return ResponseEntity.ok().body(room);
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "/rooms/post")
-	public ResponseEntity<?> addNewRoom(@RequestBody RoomDto roomDto) {
-		Room room = service.saveRoom(Converter.RoomDtoToRoom(roomDto));
-		return ResponseEntity.ok().body(room);
+	
+	//Correct Mapping
+	@GetMapping("/rooms/occup")
+	public List<Room> listOccupiedRooms() {
+		List<Room> roomsOccupied = service.findOccupiedRooms();
+		return roomsOccupied;
+	}
+	
+	//Correct Mapping
+	@PostMapping("/add-room")
+	public Room addRoom(@RequestBody Room room) {
+		return service.saveRoom(room);
 	}
 
 }

@@ -40,7 +40,6 @@ public class ServiceClass {
 		List<Booking> list = bookingDao.findAll();
 		return list;
 	}
-<<<<<<< HEAD
 
 	public Optional<Booking> findBookingById(Integer id) {
 		Optional<Booking> booking = bookingDao.findById(id);
@@ -50,8 +49,6 @@ public class ServiceClass {
 	public Booking saveBooking (Booking booking) {
 		return bookingDao.save(booking);
 	}
-
-=======
 	
 	public List<Customer> findCustomerBySearchTerm(String searchTerm) {
 		List<Customer> filterCustomers = customerDao.findBySearchTerm(searchTerm);
@@ -68,26 +65,11 @@ public class ServiceClass {
 		return filterRooms;
 	}
 	
-//	public List<Booking> findActiveBookings() {
-//		List<Booking> filterBookings = bookingDao.findActiveBookingsCustomerBookings(LocalDate.now());
-//		return filterBookings;
-//	}
-	
-	public Room saveRoom(Room room) {
-		return roomDao.save(room);
-	}
-	
 	public List<Booking> findAllCustomerBookings(Integer id) {
 		List<Booking> filterBookings = bookingDao.findAllCustomerBookings(id);
 		return filterBookings;
 	}
 	
-	public Customer findCustomerById(Integer id) {
-		Optional<Customer> customer = customerDao.findById(id);
-		return customer.orElse(null);
-	}
-	
->>>>>>> danibranch3
 	public List<Room> findAllRooms() {
 		List<Room> list = roomDao.findAll();
 		return list;
