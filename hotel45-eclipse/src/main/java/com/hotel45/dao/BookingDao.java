@@ -16,10 +16,10 @@ import com.hotel45.model.Booking;
 public interface BookingDao extends JpaRepository<Booking, Integer> {
 	
 	@Query("SELECT booking FROM Booking booking WHERE customer.id = :id")
-	public List<Booking> findAllCustomerBookings(@Param("id") Integer id);
+	public List<Booking> findAllBookingsByCustomer(@Param("id") Integer id);
 	
 	@Query("SELECT booking FROM Booking booking WHERE customer.id = :id AND booking.checkOutDate > :datenow")
-	public List<Booking> findFowardCustomerBookings(@Param("id") Integer id, @Param("datenow") LocalDate datenow);
+	public List<Booking> findActiveBookingsByCustomer(@Param("id") Integer id, @Param("datenow") LocalDate datenow);
 	
 //	@Query("SELECT booking FROM Booking booking WHERE booking.checkOutDate > :datenow AND booking.checkInDate < :datenow")
 //	public List<Booking> findActiveBookingsCustomerBookings(@Param("datenow") LocalDate datenow);

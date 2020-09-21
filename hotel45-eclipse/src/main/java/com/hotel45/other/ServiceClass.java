@@ -55,8 +55,8 @@ public class ServiceClass {
 		return filterCustomers;		
 	}
 	
-	public List<Booking> findFowardCustomerBookings(Integer id) {
-		List<Booking> filterBookings = bookingDao.findFowardCustomerBookings(id, LocalDate.now());
+	public List<Booking> findActiveBookingsByCustomer(Integer id) {
+		List<Booking> filterBookings = bookingDao.findActiveBookingsByCustomer(id, LocalDate.now());
 		return filterBookings;
 	}
 	
@@ -65,8 +65,8 @@ public class ServiceClass {
 		return filterRooms;
 	}
 	
-	public List<Booking> findAllCustomerBookings(Integer id) {
-		List<Booking> filterBookings = bookingDao.findAllCustomerBookings(id);
+	public List<Booking> findAllBookingsByCustomer(Integer id) {
+		List<Booking> filterBookings = bookingDao.findAllBookingsByCustomer(id);
 		return filterBookings;
 	}
 	
@@ -89,5 +89,15 @@ public class ServiceClass {
 		customer.setLastName(customer.getLastName().toLowerCase());
 		return customerDao.save(customer);
 	}
+	
+	public void deleteBookingById(Integer id) {
+		bookingDao.deleteById(id);
+	}
+	
+	
+	
+	
+	
+	
 
 }
