@@ -1,6 +1,7 @@
 package com.hotel45.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -30,9 +31,9 @@ public class Room implements Serializable {
 	private double costPerDay;
 	private boolean isOccupied;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "room")
 	@JsonIgnore
-	private List<Booking> bookingList;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "room")
+	private List<Booking> bookingList = new ArrayList<>();
 
 	public Room() {
 

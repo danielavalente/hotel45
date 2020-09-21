@@ -1,6 +1,7 @@
 package com.hotel45.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -28,9 +29,9 @@ public class Customer implements Serializable {
     private String phone;
     private String email;
     
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
     @JsonIgnore
-	private List<Booking> bookingList;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
+	private List<Booking> bookingList = new ArrayList<>();
     
     public Customer()  {
     	
@@ -40,7 +41,7 @@ public class Customer implements Serializable {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
-		Address = address;
+		this.Address = address;
 		this.phone = phone;
 		this.email = email;
 	}

@@ -83,5 +83,11 @@ public class ServiceClass {
 	public Room saveRoom(Room room) {
 		return roomDao.save(room);
 	}
+	
+	public Customer saveCustomer(Customer customer) {
+		customer.setFirstName(customer.getFirstName().toLowerCase());
+		customer.setLastName(customer.getLastName().toLowerCase());
+		return customerDao.save(customer);
+	}
 
 }
