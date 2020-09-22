@@ -1,7 +1,7 @@
 package com.hotel45.model;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 @Entity
@@ -27,15 +29,19 @@ public class Booking implements Serializable {
     @JoinColumn(name = "room_id")
     private Room room;
 
-    private LocalDate checkInDate;
-    private LocalDate checkOutDate;
+    @JsonFormat(pattern= "dd/MM/yyyy")
+    private Date checkInDate;
+    
+    @JsonFormat(pattern= "dd/MM/yyyy")
+    private Date checkOutDate;
+    
     private double totalCost;
     
     public Booking() {
     	
     }
 
-    public Booking(Customer customer, Room room, LocalDate checkInDate, LocalDate checkOutDate, double totalCost) {
+    public Booking(Customer customer, Room room, Date checkInDate, Date checkOutDate, double totalCost) {
 		super();
 		this.customer = customer;
 		this.room = room;
@@ -60,19 +66,19 @@ public class Booking implements Serializable {
         this.room = room;
     }
 
-    public LocalDate getCheckInDate() {
+    public Date getCheckInDate() {
         return checkInDate;
     }
 
-    public void setCheckInDate(LocalDate checkInDate) {
+    public void setCheckInDate(Date checkInDate) {
         this.checkInDate = checkInDate;
     }
 
-    public LocalDate getCheckOutDate() {
+    public Date getCheckOutDate() {
         return checkOutDate;
     }
 
-    public void setCheckOutDate(LocalDate checkOutDate) {
+    public void setCheckOutDate(Date checkOutDate) {
         this.checkOutDate = checkOutDate;
     }
 

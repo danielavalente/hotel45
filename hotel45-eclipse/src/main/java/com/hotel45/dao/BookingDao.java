@@ -1,6 +1,6 @@
 package com.hotel45.dao;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -19,7 +19,7 @@ public interface BookingDao extends JpaRepository<Booking, Integer> {
 	public List<Booking> findAllBookingsByCustomer(@Param("id") Integer id);
 	
 	@Query("SELECT booking FROM Booking booking WHERE customer.id = :id AND booking.checkOutDate > :datenow")
-	public List<Booking> findActiveBookingsByCustomer(@Param("id") Integer id, @Param("datenow") LocalDate datenow);
+	public List<Booking> findActiveBookingsByCustomer(@Param("id") Integer id, @Param("datenow") Date datenow);
 	
 //	@Query("SELECT booking FROM Booking booking WHERE booking.checkOutDate > :datenow AND booking.checkInDate < :datenow")
 //	public List<Booking> findActiveBookingsCustomerBookings(@Param("datenow") LocalDate datenow);

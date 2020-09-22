@@ -1,6 +1,6 @@
 package com.hotel45.other;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -56,7 +56,8 @@ public class ServiceClass {
 	}
 	
 	public List<Booking> findActiveBookingsByCustomer(Integer id) {
-		List<Booking> filterBookings = bookingDao.findActiveBookingsByCustomer(id, LocalDate.now());
+		Date date = new Date();
+		List<Booking> filterBookings = bookingDao.findActiveBookingsByCustomer(id, date);
 		return filterBookings;
 	}
 	

@@ -1,6 +1,6 @@
 package com.hotel45;
 
-import java.time.LocalDate;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,12 +46,12 @@ public class Hotel45Application implements CommandLineRunner {
 		Customer customer3 = new Customer("andre", "pisco", "Madri", "+351 910 559 402", "andrepisco@gmail.com");
 		Customer customer4 = new Customer("nuno", "pina", "Marte", "+351 910 667 502", "nunopina@gmail.com");
 	
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
-		
-		Booking booking1 = new Booking(customer1, room1, LocalDate.of(2020, 9, 15), LocalDate.of(2020, 9, 20), 500);
-		Booking booking2 = new Booking(customer2, room1, LocalDate.of(2020, 9, 25), LocalDate.of(2020, 9, 30), 500);
-		Booking booking3 = new Booking(customer1, room2, LocalDate.of(2020, 10, 9), LocalDate.of(2020, 10, 10), 200);
-		Booking booking4 = new Booking(customer1, room3, LocalDate.of(2020, 8, 1), LocalDate.of(2020, 9, 3), 1000);
+		Booking booking1 = new Booking(customer1, room1, sdf.parse("15/09/2020"), sdf.parse("20/09/2020"), 500);
+		Booking booking2 = new Booking(customer2, room1, sdf.parse("25/09/2020"), sdf.parse("30/09/2020"), 500);
+		Booking booking3 = new Booking(customer1, room2, sdf.parse("09/10/2020"), sdf.parse("10/10/2020"), 200);
+		Booking booking4 = new Booking(customer1, room3, sdf.parse("01/08/2020"), sdf.parse("03/09/2020"), 1000);
 		
 		
 		room1.getBookingList().addAll(Arrays.asList(booking1, booking2));
