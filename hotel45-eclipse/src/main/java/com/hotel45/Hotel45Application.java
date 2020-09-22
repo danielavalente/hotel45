@@ -39,12 +39,11 @@ public class Hotel45Application implements CommandLineRunner {
 		Room room2 = new Room(TypeOfRoom.EXECUTIVE, 100, false);
 		Room room3 = new Room(TypeOfRoom.LUXURY, 200, true);
 		
-	
-		
-		Customer customer1 = new Customer("dani", "valente", "Rio de Janeiro", "+351 935 125 220", "ddani.daraujo@gmail.com");
-		Customer customer2 = new Customer("carlos", "rocha", "Lisboa", "+351 915 845 561", "carlosrocha@gmail.com");
-		Customer customer3 = new Customer("andre", "pisco", "Madri", "+351 910 559 402", "andrepisco@gmail.com");
-		Customer customer4 = new Customer("nuno", "pina", "Marte", "+351 910 667 502", "nunopina@gmail.com");
+		Customer customer1 = new Customer("Dani", "Valente", "Rio de Janeiro", "+351 935 125 220", "ddani.daraujo@gmail.com");
+		Customer customer2 = new Customer("Carlos", "Rocha", "Lisboa", "+351 915 845 561", "carlosrocha@gmail.com");
+		Customer customer3 = new Customer("Andre", "Pisco", "Madri", "+351 910 559 402", "andrepisco@gmail.com");
+		Customer customer4 = new Customer("Nuno", "Pina", "Marte", "+351 910 667 502", "nunopina@gmail.com");
+		Customer customer5 = new Customer("Micaela", "Moreira", "Lisboa", "+351 924 087 844", "rafa@gmail.com");
 	
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
@@ -64,7 +63,7 @@ public class Hotel45Application implements CommandLineRunner {
 		
 		
 		roomDao.saveAll(Arrays.asList(room1, room2, room3));
-		customerDao.saveAll(Arrays.asList(customer1, customer2, customer3, customer4));
+		customerDao.saveAll(Arrays.asList(customer1, customer2, customer3, customer4, customer5));
 		bookingDao.saveAll(Arrays.asList(booking1, booking2, booking3, booking4));
 		
 	}

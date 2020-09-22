@@ -39,8 +39,8 @@ public class Customer implements Serializable {
     
 	public Customer(String firstName, String lastName, String address, String phone, String email) {
 		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.firstName = firstName.toLowerCase();
+		this.lastName = lastName.toLowerCase();
 		this.Address = address;
 		this.phone = phone;
 		this.email = email;
@@ -55,32 +55,41 @@ public class Customer implements Serializable {
 	}
 
 	public String getFirstName() {
-		return firstName;
+		return firstName.substring(0, 1).toUpperCase() + firstName.substring(1);
 	}
+	
 	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+		this.firstName = firstName.toLowerCase();
 	}
+	
 	public String getLastName() {
-		return lastName;
+		return lastName.substring(0, 1).toUpperCase() + lastName.substring(1);
 	}
+	
 	public void setLastName(String lastName) {
-		this.lastName = lastName;
+		this.lastName = lastName.toLowerCase();
 	}
+	
 	public String getAddress() {
 		return Address;
 	}
+	
 	public void setAddress(String address) {
 		Address = address;
 	}
+	
 	public String getPhone() {
 		return phone;
 	}
+	
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	
 	public String getEmail() {
 		return email;
 	}
+	
 	public void setEmail(String email) {
 		this.email = email;
 	}
