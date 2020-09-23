@@ -1,0 +1,100 @@
+* {
+    margin: 0px;
+    padding: 0%;
+}
+
+body {
+    height: 100%;
+}
+
+.column1 {
+    float:left;
+    width:15%;
+    height: 100%;
+}
+
+.column2 {
+    float: right;
+    width:85%;
+    text-align: center;
+}
+
+.row:after {
+    content:"";
+    display: table;
+    clear:both;
+}
+
+.innerLeft {
+    margin: 25px;
+}
+
+.sidebarButton {
+    border: 2px solid green;
+    color: black;
+    padding: 16px 48px;
+    text-align: center;
+    text-decoration: wavy;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    background-color: white;
+    width: 175px;
+}
+
+.sidebarButton:hover {
+    background-color: yellowgreen;
+    color: white;
+}
+
+.mainPageButton {
+    border: 2px solid rgb(73, 50, 205);
+    color: black;
+    padding: 16px 48px;
+    text-align: center;
+    text-decoration: wavy;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: 0.5s;
+    cursor: pointer;
+    background-color: white;
+    width: 175px;
+}
+
+.mainPageButton:hover {
+    background-color:rgb(23, 159, 163);
+    color: white;
+}
+form {
+    margin: 15%;
+    background-color: rgb(223, 222, 222);
+}
+
+input {
+    width: 100px;
+    border: 2px solid rgb(73, 50, 205);
+    border-radius: 4px;
+    transition: width 0.4s ease-in-out;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-position: 10px 10px;
+    display: inline-block;
+}
+
+input:hover {
+    width: 175px;
+}
+
+#username {
+    height: 40px;
+}
+
+#password {
+    height: 40px;
+}
+
+label {
+    font-size: 36px;
+    color: rgb(73,50,205);
+}
