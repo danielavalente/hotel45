@@ -57,4 +57,9 @@ public class BookingService {
 		return filterBookings;
 	}
 	
+	public List<Booking> findBookingsBetweenDates() {
+		List<Booking> filterBookings = bookingDao.findBookingsBetweenDates();
+		return filterBookings;
+	}
+	
 }

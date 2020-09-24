@@ -6,6 +6,19 @@ $(document).ready(function() {
     var bookButton = $('#bookButton');
     bookButton.click(getCustomer);
 
+    $(function () {
+      $('#inputCheckIn').datetimepicker();
+      $('#inputCheckOut').datetimepicker({
+          useCurrent: false //Important! See issue #1075
+      });
+      $("#inputCheckIn").on("dp.change", function (e) {
+          $('#inputCheckOut').data("DateTimePicker").minDate(e.date);
+      });
+      $("#inputCheckOut").on("dp.change", function (e) {
+          $('#inputCheckIn').data("DateTimePicker").maxDate(e.date);
+      });
+  });
+
   });
   
     function list() {

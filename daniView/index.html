@@ -64,6 +64,12 @@
         <hr></hr>
         <form>
           <div class="form-row">
+            <div style="display: none;" class="form-group col-md-12">
+              <label for="inputId">Id</label>
+              <input type="text" class="form-control" name="id" id="inputId">
+            </div>
+          </div>
+          <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputFirstName">First Name</label>
               <input type="text" class="form-control" name="firstName" id="inputFirstName">
@@ -100,9 +106,13 @@
             </div>
           </div>
           <div class="form-row">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-6">
               <label for="inputRoomType">Room Type</label>
               <input type="text" class="form-control" name="roomType" id="inputRoomType">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputRoomId">Room Number</label>
+              <input type="text" class="form-control" name="id" id="inputRoomId">
             </div>
           </div>
           <button id="bookButton" type="button" class="btn float-right btn-danger">Book</button>

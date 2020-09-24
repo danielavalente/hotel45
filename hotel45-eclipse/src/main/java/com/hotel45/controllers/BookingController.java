@@ -44,7 +44,7 @@ public class BookingController {
 	}
 
 	@GetMapping("/active/customer{id}")
-	public List<Booking> findActiveBookingsByCustomer(@PathVariable Integer id) {
+	public List<Booking> listActiveBookingsByCustomer(@PathVariable Integer id) {
 		List<Booking> customersFound = service.findActiveBookingsByCustomer(id);
 		return customersFound;
 	}
