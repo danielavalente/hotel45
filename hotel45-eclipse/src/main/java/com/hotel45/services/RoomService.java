@@ -2,6 +2,7 @@ package com.hotel45.services;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 
 
@@ -61,9 +62,9 @@ public class RoomService {
 	}
 
 	
-	public Set<TypeOfRoom> findFreeRoomsBetweenDates () {
+	public Set<TypeOfRoom> findFreeRoomsBetweenDates (Date checkInDate, Date checkOutDate) {
 		List<Room> allRooms = roomDao.findAll();
-		List<Booking> allBookingsbetweenDates = bookingDao.findBookingsBetweenDates();
+		List<Booking> allBookingsbetweenDates = bookingDao.findBookingsBetweenDates(checkInDate,checkOutDate);
 		
 		ArrayList<Integer> allRoomsIds = new ArrayList<>();
 		for (Room room : allRooms) {

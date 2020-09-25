@@ -1,6 +1,7 @@
 package com.hotel45.controllers;
 
-import java.util.ArrayList;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -35,7 +36,7 @@ public class RoomController {
 		return listRooms;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/&{id}")
 	public Room roomById(@PathVariable Integer id) {
 		Room room = service.roomById(id);
 		return room;
@@ -47,9 +48,11 @@ public class RoomController {
 		return rooms;
 	}
 
-	@GetMapping("/freeRooms")
-	public Set<TypeOfRoom> listFreeRooms() {
-		Set<TypeOfRoom> freeRooms = service.findFreeRoomsBetweenDates();
+	@GetMapping("/freeRooms/{checkInDate}&{checkOutDate}")
+	public Set<TypeOfRoom> listFreeRooms(@PathVariable String checkInDate, @PathVariable String checkOutDate) throws ParseException {
+		SimpleDateFormat simpledate = new SimpleDateFormat("dd-MM-yyyy");
+		Set<TypeOfRoom> freeRooms = service.findFreeRoomsBetweenDates(simpledate.parse(checkInDate),simpledate.parse(checkOutDate));
+		
 		return freeRooms;
 	}
 
