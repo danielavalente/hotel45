@@ -1,12 +1,10 @@
 package com.hotel45.services;
 
-<<<<<<< HEAD
+
 import java.util.ArrayList;
 import java.util.HashSet;
-=======
 
-import java.util.Date;
->>>>>>> CleanningSystem
+
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -26,16 +24,14 @@ public class RoomService {
 
 	@Autowired
 	private RoomDao roomDao;
-<<<<<<< HEAD
+
 	
 	@Autowired
 	private BookingDao bookingDao;
 	
-	//FindAll
-=======
+
 
 	// FindAll
->>>>>>> CleanningSystem
 	public List<Room> findAllRooms() {
 		List<Room> list = roomDao.findAll();
 		return list;
@@ -63,7 +59,7 @@ public class RoomService {
 		List<Room> filterRooms = roomDao.findRoomsAvailable();
 		return filterRooms;
 	}
-<<<<<<< HEAD
+
 	
 	public Set<TypeOfRoom> findFreeRoomsBetweenDates () {
 		List<Room> allRooms = roomDao.findAll();
@@ -87,12 +83,7 @@ public class RoomService {
 		}
 		
 		return distinctAvailableRoomType;
-=======
 
-	public List<Room> findRoomsAvailableByDate() {
-		List<Room> roomsByDate = roomDao.findAvailableRoomsByDate();
-		return roomsByDate;
->>>>>>> CleanningSystem
 	}
 
 }

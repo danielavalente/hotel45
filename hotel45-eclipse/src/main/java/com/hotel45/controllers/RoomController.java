@@ -1,10 +1,7 @@
 package com.hotel45.controllers;
 
-<<<<<<< HEAD
 import java.util.ArrayList;
-=======
 import java.util.Date;
->>>>>>> CleanningSystem
 import java.util.List;
 import java.util.Set;
 
@@ -50,21 +47,11 @@ public class RoomController {
 		return rooms;
 	}
 
-	@GetMapping("/checkin")
-	public List<Room> findRoomsAvailableByDate() {
-		List<Room> rooms = service.findRoomsAvailableByDate();
-		return rooms;
-	}
-<<<<<<< HEAD
-	
 	@GetMapping("/freeRooms")
 	public Set<TypeOfRoom> listFreeRooms() {
 		Set<TypeOfRoom> freeRooms = service.findFreeRoomsBetweenDates();
 		return freeRooms;
 	}
-	
-=======
->>>>>>> CleanningSystem
 
 	// POST'S ------------------------
 	@PostMapping("/add")
