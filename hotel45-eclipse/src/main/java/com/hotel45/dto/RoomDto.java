@@ -6,7 +6,7 @@ public class RoomDto {
 	
 	private TypeOfRoom typeOfRoom;
 	private double costPerDay;
-	private boolean isOccupied;
+	private boolean isAvailable;
 	
 	
 	public TypeOfRoom getTypeOfRoom() {
@@ -21,11 +21,11 @@ public class RoomDto {
 	public void setCostPerDay(double costPerDay) {
 		this.costPerDay = costPerDay;
 	}
-	public boolean isOccupied() {
-		return isOccupied;
+	public boolean isAvailable() {
+		return isAvailable;
 	}
-	public void setOccupied(boolean isOccupied) {
-		this.isOccupied = isOccupied;
+	public void setAvailable(boolean isOccupied) {
+		this.isAvailable = isOccupied;
 	}
 	
 	

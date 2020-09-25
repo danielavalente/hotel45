@@ -65,8 +65,8 @@ public class Converter {
 
 		Room room = new Room();
 
+		room.setAvailable(roomDto.isAvailable());
 		room.setCostPerDay(roomDto.getCostPerDay());
-		room.setOccupied(roomDto.isOccupied());
 		room.setTypeOfRoom(roomDto.getTypeOfRoom());
 
 		return room;
@@ -77,7 +77,7 @@ public class Converter {
 
 		RoomDto roomDto = new RoomDto();
 
-		roomDto.setOccupied(room.isOccupied());
+		roomDto.setAvailable(room.isAvailable());
 		roomDto.setCostPerDay(roomDto.getCostPerDay());
 		roomDto.setTypeOfRoom(roomDto.getTypeOfRoom());
 

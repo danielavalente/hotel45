@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.hotel45.model.Booking;
 
+
 @Repository
 @Transactional
 public interface BookingDao extends JpaRepository<Booking, Integer> {
@@ -23,4 +24,7 @@ public interface BookingDao extends JpaRepository<Booking, Integer> {
 	
 //	@Query("SELECT booking FROM Booking booking WHERE booking.checkOutDate > :datenow AND booking.checkInDate < :datenow")
 //	public List<Booking> findActiveBookingsCustomerBookings(@Param("datenow") LocalDate datenow);
+	
+	
+
 }
