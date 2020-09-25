@@ -1,11 +1,16 @@
 package com.hotel45.controllers;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
+=======
+import java.util.Date;
+>>>>>>> CleanningSystem
 import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,10 +30,9 @@ public class RoomController {
 
 	@Autowired
 	private RoomService service;
-	
-	
-	//GET'S ------------------------
-	@GetMapping(value={"","/"})
+
+	// GET'S ------------------------
+	@GetMapping(value = { "", "/" })
 	public List<Room> listAllRooms() {
 		List<Room> listRooms = service.findAllRooms();
 		return listRooms;
@@ -40,11 +44,18 @@ public class RoomController {
 		return room;
 	}
 
-	@GetMapping("/occup")
-	public List<Room> listOccupiedRooms() {
-		List<Room> roomsOccupied = service.findOccupiedRooms();
-		return roomsOccupied;
+	@GetMapping("/available")
+	public List<Room> findRoomsAvailable() {
+		List<Room> rooms = service.findRoomsAvailable();
+		return rooms;
 	}
+
+	@GetMapping("/checkin")
+	public List<Room> findRoomsAvailableByDate() {
+		List<Room> rooms = service.findRoomsAvailableByDate();
+		return rooms;
+	}
+<<<<<<< HEAD
 	
 	@GetMapping("/freeRooms")
 	public Set<TypeOfRoom> listFreeRooms() {
@@ -52,23 +63,26 @@ public class RoomController {
 		return freeRooms;
 	}
 	
+=======
+>>>>>>> CleanningSystem
 
-	//POST'S ------------------------
+	// POST'S ------------------------
 	@PostMapping("/add")
 	public Room addRoom(@RequestBody Room room) {
 		return service.saveRoom(room);
 	}
-	
-	
-	//PUT'S ------------------------
+
+	// PUT'S ------------------------
 	@PutMapping("/update{id}")
 	public Room updateRoom(@RequestBody Room updateRoom, @PathVariable Integer id) {
 		updateRoom.setId(id);
 		return service.saveRoom(updateRoom);
 	}
-	
-	
-	//DELETE'S ------------------------
-	
-	
+
+	// DELETE'S ------------------------
+	@DeleteMapping("/delete{id}")
+	public void deleteRoomById(@PathVariable Integer id) {
+		service.deleteRoomById(id);
+	}
+
 }

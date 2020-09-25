@@ -1,7 +1,12 @@
 package com.hotel45.services;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.HashSet;
+=======
+
+import java.util.Date;
+>>>>>>> CleanningSystem
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -18,42 +23,47 @@ import com.hotel45.other.TypeOfRoom;
 
 @Service
 public class RoomService {
-	
+
 	@Autowired
 	private RoomDao roomDao;
+<<<<<<< HEAD
 	
 	@Autowired
 	private BookingDao bookingDao;
 	
 	//FindAll
+=======
+
+	// FindAll
+>>>>>>> CleanningSystem
 	public List<Room> findAllRooms() {
 		List<Room> list = roomDao.findAll();
 		return list;
 	}
-	
-	//FindById
+
+	// FindById
 	public Room roomById(Integer id) {
 		Optional<Room> room = roomDao.findById(id);
 		return room.orElseThrow(() -> new ObjectNotFoundException(
-				 "Objeto não encontrado! Id: " + id + ", Tipo: " + Room.class.getSimpleName()));
+				"Objeto não encontrado! Id: " + id + ", Tipo: " + Room.class.getSimpleName()));
 	}
-	
-	//Save
+
+	// Save
 	public Room saveRoom(Room room) {
 		return roomDao.save(room);
 	}
-	
-	//Delete
+
+	// Delete
 	public void deleteRoomById(Integer id) {
 		roomDao.deleteById(id);
 	}
 
-	
-	//Others
-	public List<Room> findOccupiedRooms() {
-		List<Room> filterRooms = roomDao.findOccupiedRooms();
+	// Others
+	public List<Room> findRoomsAvailable() {
+		List<Room> filterRooms = roomDao.findRoomsAvailable();
 		return filterRooms;
 	}
+<<<<<<< HEAD
 	
 	public Set<TypeOfRoom> findFreeRoomsBetweenDates () {
 		List<Room> allRooms = roomDao.findAll();
@@ -77,6 +87,12 @@ public class RoomService {
 		}
 		
 		return distinctAvailableRoomType;
+=======
+
+	public List<Room> findRoomsAvailableByDate() {
+		List<Room> roomsByDate = roomDao.findAvailableRoomsByDate();
+		return roomsByDate;
+>>>>>>> CleanningSystem
 	}
 
 }

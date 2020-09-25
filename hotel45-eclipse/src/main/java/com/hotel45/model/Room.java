@@ -15,6 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.hotel45.other.StatusClean;
 import com.hotel45.other.TypeOfRoom;
 
 @Entity
@@ -28,8 +29,12 @@ public class Room implements Serializable {
 
 	@Enumerated(EnumType.STRING)
 	private TypeOfRoom typeOfRoom;
+
+	@Enumerated(EnumType.STRING)
+	private StatusClean statusClean;
+
 	private double costPerDay;
-	private boolean isOccupied;
+	private boolean isAvailable;
 
 	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "room")
@@ -39,19 +44,21 @@ public class Room implements Serializable {
 
 	}
 
-	public Room(TypeOfRoom typeOfRoom, double costPerDay, boolean isOccupied) {
+	public Room(TypeOfRoom typeOfRoom, StatusClean statusClean, double costPerDay, boolean isOccupied) {
 		super();
+		this.statusClean = statusClean;
 		this.typeOfRoom = typeOfRoom;
 		this.costPerDay = costPerDay;
-		this.isOccupied = isOccupied;
+		this.isAvailable = isOccupied;
 	}
 
-	public boolean isOccupied() {
-		return isOccupied;
+	
+	public boolean isAvailable() {
+		return isAvailable;
 	}
 
-	public void setOccupied(boolean isOccupied) {
-		this.isOccupied = isOccupied;
+	public void setAvailable(boolean isAvailable) {
+		this.isAvailable = isAvailable;
 	}
 
 	public List<Booking> getBookingList() {
@@ -84,6 +91,14 @@ public class Room implements Serializable {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public StatusClean getStatusClean() {
+		return statusClean;
+	}
+
+	public void setStatusClean(StatusClean statusClean) {
+		this.statusClean = statusClean;
 	}
 
 	@Override
