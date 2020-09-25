@@ -11,8 +11,8 @@ Change into rooms json.
             type: 'GET',
             dataType: 'json',
             success: function(results) {
-                    data = { sprite: results.sprites.other['official-artwork'].front_default}
-                    cb(null, data)
+                    //data = { sprite: results.sprites.other['official-artwork'].front_default}
+                    cb(null/*, data*/)
             },
             error: function(request, statusText, httpError) { cb(httpError || statusText)}
         });

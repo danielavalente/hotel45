@@ -15,14 +15,14 @@ define(function() {
 
 
     internals.renderLogin = function() {
-        if(internals.elements.LoginButton) {
-            internals.elements.LoginButton.detach();
+        if(internals.elements.LoginArea) {
+            internals.elements.LoginArea.detach();
         };
 
-        internals.elements.LoginButton = $(internals.createLogin());
-        internals.elements.LoginButton.click(internals.handlers["toBeDefined"]);
-        internals.elements.column2.append(internals.elements.LoginButton);
-
+        internals.elements.LoginArea = $(internals.createLogin());
+        internals.elements.LoginArea.click(internals.handlers["toBeDefined"]);
+        internals.elements.column2.append(internals.elements.LoginArea);
+        
         
     };
 
@@ -34,6 +34,8 @@ define(function() {
         internals.elements.button4 = $('.button4');
         
         internals.renderLogin();
+        internals.elements.button5 = $('.button5');
+        internals.elements.button5.click(internals.handlers["submitClick"]);
         internals.renderLeftColumn();
     };
 
