@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,9 +24,8 @@ public class CustomerController {
 	@Autowired
 	private CustomerService service;
 
-	
-	//GET'S ------------------------
-	@GetMapping(value={"","/"})
+	// GET'S ------------------------
+	@GetMapping(value = { "", "/" })
 	public List<Customer> listCustomers() {
 		List<Customer> listCustomers = service.findAllCustomers();
 		return listCustomers;
@@ -43,25 +43,24 @@ public class CustomerController {
 		return customerFound;
 	}
 
-	
-	//POST'S ------------------------
+	// POST'S ------------------------
 	@PostMapping("/add")
 	public Customer addCustomer(@RequestBody Customer customer) {
 		Customer addCustomer = service.saveCustomer(customer);
 		return addCustomer;
 	}
-	
-	
-	//PUT'S ------------------------
+
+	// PUT'S ------------------------
 	@PutMapping("/update{id}")
 	public Customer updateCustomer(@RequestBody Customer updateCustomer, @PathVariable Integer id) {
 		updateCustomer.setId(id);
 		return service.saveCustomer(updateCustomer);
 	}
-	
-	
-	//DELETE'S ------------------------
-	
-	
+
+	// DELETE'S ------------------------
+	@DeleteMapping("/delete{id}")
+	public void deleteCustomerById(@PathVariable Integer id) {
+		service.deleteCustomerById(id);
+	}
 
 }

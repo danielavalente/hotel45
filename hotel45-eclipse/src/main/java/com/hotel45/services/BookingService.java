@@ -57,4 +57,9 @@ public class BookingService {
 		return filterBookings;
 	}
 	
+	public List<Booking> findBookingsBetweenDates(Date checkInDate, Date checkOutDate) {
+		List<Booking> filterBookings = bookingDao.findBookingsBetweenDates(checkInDate, checkOutDate);
+		return filterBookings;
+	}
+	
 }
