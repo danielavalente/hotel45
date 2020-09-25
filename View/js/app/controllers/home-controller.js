@@ -8,6 +8,7 @@ define(['services/home-service', 'views/home-view'], function(homeService, homeV
         homeView.bind('roomsClick', internals.onRoomsButtonClickHandler);
         homeView.bind('guestsClick', internals.onGuestsButtonClickHandler);
         homeView.bind('bookingsClick', internals.onBookingsButtonClickHandler);
+        homeView.bind('submitClick', internals.onloginButtonClickHandler);
     };
 
     internals.onHomeButtonClickHandler = function () {
@@ -25,6 +26,11 @@ define(['services/home-service', 'views/home-view'], function(homeService, homeV
     internals.onBookingsButtonClickHandler = function () {
         window.location.hash = '#bookings';
     };
+
+    internals.onloginButtonClickHandler = function () {
+        console.log($('#username').val());
+        
+    }
 
     externals.start = function() {
         internals.bindEventHandlers();
