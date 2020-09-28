@@ -2,11 +2,12 @@ package com.hotel45.controllers;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hotel45.controllers.exceptions.DataIntegrityException;
+import com.hotel45.dto.RoomDto;
 import com.hotel45.model.Room;
 import com.hotel45.other.TypeOfRoom;
 import com.hotel45.services.RoomService;
@@ -31,21 +34,23 @@ public class RoomController {
 
 	// GET'S ------------------------
 	@GetMapping(value = { "", "/" })
-	public List<Room> listAllRooms() {
+	public List<RoomDto> listAllRooms() {
 		List<Room> listRooms = service.findAllRooms();
-		return listRooms;
+		List<RoomDto> listRoomsDTO = listRooms.stream().map(obj -> new RoomDto(obj)).collect(Collectors.toList());
+		return listRoomsDTO;
 	}
 
-	@GetMapping("/&{id}")
-	public Room roomById(@PathVariable Integer id) {
-		Room room = service.roomById(id);
-		return room;
+	@GetMapping("/{id}")
+	public RoomDto roomById(@PathVariable Integer id) {
+		RoomDto roomDTO = new RoomDto(service.roomById(id));
+		return roomDTO;
 	}
 
 	@GetMapping("/available")
-	public List<Room> findRoomsAvailable() {
+	public List<RoomDto> findRoomsAvailable() {
 		List<Room> rooms = service.findRoomsAvailable();
-		return rooms;
+		List<RoomDto> roomsDTO = rooms.stream().map(obj -> new RoomDto(obj)).collect(Collectors.toList());
+		return roomsDTO;
 	}
 
 	@GetMapping("/freeRooms/{checkInDate}&{checkOutDate}")
@@ -72,7 +77,11 @@ public class RoomController {
 	// DELETE'S ------------------------
 	@DeleteMapping("/delete{id}")
 	public void deleteRoomById(@PathVariable Integer id) {
-		service.deleteRoomById(id);
+		try {
+			service.deleteRoomById(id);
+		} catch (DataIntegrityViolationException e) {
+			throw new DataIntegrityException("It's not possible to delete a room that has bookings.");
+		}
 	}
 
 }
