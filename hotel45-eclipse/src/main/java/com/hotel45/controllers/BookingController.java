@@ -1,6 +1,7 @@
 	package com.hotel45.controllers;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hotel45.dto.BookingDto;
 import com.hotel45.model.Booking;
 import com.hotel45.services.BookingService;
 
@@ -26,27 +28,30 @@ public class BookingController {
 
 	//GET'S ------------------------
 	@GetMapping(value={"","/"})
-	public List<Booking> listBookings() {
+	public List<BookingDto> listBookings() {
 		List<Booking> listBookings = service.findAllBookings();
-		return listBookings;
+		List<BookingDto> listBookingsDTO = listBookings.stream().map(obj -> new BookingDto(obj)).collect(Collectors.toList());
+		return listBookingsDTO;
 	}
 
 	@GetMapping("/{id}")
-	public Booking listBookingById(@PathVariable Integer id) {
-		Booking booking = service.findBookingById(id);
-		return booking;
+	public BookingDto listBookingById(@PathVariable Integer id) {
+		BookingDto bookingDto = new BookingDto(service.findBookingById(id));
+		return bookingDto;
 	}
 
 	@GetMapping("/customer{id}")
-	public List<Booking> listAllBookingsByCustomer(@PathVariable Integer id) {
+	public List<BookingDto> listAllBookingsByCustomer(@PathVariable Integer id) {
 		List<Booking> customersFound = service.findAllBookingsByCustomer(id);
-		return customersFound;
+		List<BookingDto> customersFoundDTO = customersFound.stream().map(obj -> new BookingDto(obj)).collect(Collectors.toList());
+		return customersFoundDTO;
 	}
 
 	@GetMapping("/active/customer{id}")
-	public List<Booking> listActiveBookingsByCustomer(@PathVariable Integer id) {
+	public List<BookingDto> listActiveBookingsByCustomer(@PathVariable Integer id) {
 		List<Booking> customersFound = service.findActiveBookingsByCustomer(id);
-		return customersFound;
+		List<BookingDto> customersFoundDTO = customersFound.stream().map(obj -> new BookingDto(obj)).collect(Collectors.toList());
+		return customersFoundDTO;
 	}
 
 	

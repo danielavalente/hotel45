@@ -1,6 +1,7 @@
 package com.hotel45.controllers;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hotel45.dto.CustomerDto;
 import com.hotel45.model.Customer;
 import com.hotel45.services.CustomerService;
 
@@ -26,21 +28,23 @@ public class CustomerController {
 
 	// GET'S ------------------------
 	@GetMapping(value = { "", "/" })
-	public List<Customer> listCustomers() {
+	public List<CustomerDto> listCustomers() {
 		List<Customer> listCustomers = service.findAllCustomers();
-		return listCustomers;
+		List<CustomerDto> listCustomersDTO = listCustomers.stream().map(obj -> new CustomerDto(obj)).collect(Collectors.toList());
+		return listCustomersDTO;
 	}
 
 	@GetMapping("/{id}")
-	public Customer customerById(@PathVariable Integer id) {
-		Customer customer = service.customerById(id);
-		return customer;
+	public CustomerDto customerById(@PathVariable Integer id) {
+		CustomerDto customerDTO = new CustomerDto(service.customerById(id));
+		return customerDTO;
 	}
 
 	@GetMapping("/search={searchTerm}")
-	public List<Customer> listCustomerBySearchTerm(@PathVariable String searchTerm) {
+	public List<CustomerDto> listCustomerBySearchTerm(@PathVariable String searchTerm) {
 		List<Customer> customerFound = service.findCustomerBySearchTerm(searchTerm);
-		return customerFound;
+		List<CustomerDto> customerFoundDTO = customerFound.stream().map(obj -> new CustomerDto(obj)).collect(Collectors.toList());
+		return customerFoundDTO;
 	}
 
 	// POST'S ------------------------
