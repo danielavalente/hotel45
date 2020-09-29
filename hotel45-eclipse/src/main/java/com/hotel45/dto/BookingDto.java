@@ -3,6 +3,8 @@ package com.hotel45.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.hotel45.model.Booking;
 
@@ -11,14 +13,20 @@ public class BookingDto implements Serializable {
 	
 	private Integer id;
 	
+	@NotNull(message = "This field is mandatory")
 	@JsonFormat(pattern= "dd/MM/yyyy")
 	private Date checkInDate;
 	
+	@NotNull(message = "This field is mandatory")
 	@JsonFormat(pattern= "dd/MM/yyyy")
     private Date checkOutDate;
 	
     private double totalCost;
+    
+    @NotNull(message = "This field is mandatory")
     private Integer customerId;
+    
+    @NotNull(message = "This field is mandatory")
     private Integer roomId;
     
     public BookingDto() {

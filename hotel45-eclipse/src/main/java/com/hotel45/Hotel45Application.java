@@ -44,10 +44,10 @@ public class Hotel45Application implements CommandLineRunner {
 
 		
 		Customer customer1 = new Customer("Dani", "Valente", "Rio de Janeiro", "+351 935 125 220", "ddani.daraujo@gmail.com");
-		Customer customer2 = new Customer("Carlos", "Rocha", "Lisboa", "+351 915 845 561", "carlosrocha@gmail.com");
-		Customer customer3 = new Customer("Andre", "Pisco", "Madri", "+351 910 559 402", "andrepisco@gmail.com");
-		Customer customer4 = new Customer("Nuno", "Pina", "Marte", "+351 910 667 502", "nunopina@gmail.com");
-		Customer customer5 = new Customer("Micaela", "Moreira", "Lisboa", "+351 924 087 844", "rafa@gmail.com");
+		Customer customer2 = new Customer("Carlos", "Rocha", "Lisboa", "915845561", "carlosrocha@gmail.com");
+		Customer customer3 = new Customer("Andre", "Pisco", "Madri", "910559402", "andrepisco@gmail.com");
+		Customer customer4 = new Customer("Nuno", "Pina", "Marte", "910667502", "nunopina@gmail.com");
+		Customer customer5 = new Customer("Micaela", "Moreira", "Lisboa", "924087844", "rafa@gmail.com");
 	
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		

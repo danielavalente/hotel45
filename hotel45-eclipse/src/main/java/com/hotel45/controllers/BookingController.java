@@ -3,6 +3,8 @@
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -57,7 +59,8 @@ public class BookingController {
 	
 	//POST'S ------------------------
 	@PostMapping("/add")
-	public Booking addNewBooking(@RequestBody Booking booking) {
+	public Booking addNewBooking(@Valid @RequestBody BookingDto bookingDTO) {
+		Booking booking = service.fromDTO(bookingDTO);
 		Booking addBooking = service.saveBooking(booking);
 		return addBooking;
 	}
@@ -65,7 +68,8 @@ public class BookingController {
 	
 	//PUT'S ------------------------
 	@PutMapping("/update{id}")
-	public Booking updateBooking(@RequestBody Booking updateBooking, @PathVariable Integer id) {
+	public Booking updateBooking(@Valid @RequestBody BookingDto updateBookingDTO, @PathVariable Integer id) {
+		Booking updateBooking = service.fromDTO(updateBookingDTO);
 		updateBooking.setId(id);
 		return service.saveBooking(updateBooking);
 	}

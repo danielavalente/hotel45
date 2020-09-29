@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import com.hotel45.controllers.exceptions.ObjectNotFoundException;
 import com.hotel45.dao.BookingDao;
 import com.hotel45.dao.RoomDao;
+import com.hotel45.dto.RoomDto;
 import com.hotel45.model.Booking;
 import com.hotel45.model.Room;
 import com.hotel45.other.TypeOfRoom;
@@ -85,6 +86,15 @@ public class RoomService {
 		
 		return distinctAvailableRoomType;
 
+	}
+	
+	//Converter
+	public Room fromDTO (RoomDto roomDTO) {
+		return new Room(
+				roomDTO.getTypeOfRoom(),
+				roomDTO.getStatusClean(),
+				roomDTO.getCostPerDay(),
+				roomDTO.getIsAvailable());
 	}
 
 }

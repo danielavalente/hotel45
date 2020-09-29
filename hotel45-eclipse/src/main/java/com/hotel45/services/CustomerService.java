@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.hotel45.controllers.exceptions.ObjectNotFoundException;
 import com.hotel45.dao.CustomerDao;
+import com.hotel45.dto.CustomerDto;
 import com.hotel45.model.Customer;
 
 @Service
@@ -46,6 +47,16 @@ public class CustomerService {
 		return filterCustomers;		
 	}
 
+	
+	//Converter
+	public Customer fromDTO(CustomerDto customerDto) {
+		return new Customer(
+				customerDto.getFirstName(),
+				customerDto.getLastName(),
+				customerDto.getAddress(),
+				customerDto.getPhone(),
+				customerDto.getEmail());
+	}
 	
 
 }

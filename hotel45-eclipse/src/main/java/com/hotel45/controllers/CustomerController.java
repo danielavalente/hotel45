@@ -3,6 +3,8 @@ package com.hotel45.controllers;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -49,14 +51,16 @@ public class CustomerController {
 
 	// POST'S ------------------------
 	@PostMapping("/add")
-	public Customer addCustomer(@RequestBody Customer customer) {
+	public Customer addCustomer(@Valid @RequestBody CustomerDto customerDTO) {
+		Customer customer = service.fromDTO(customerDTO);
 		Customer addCustomer = service.saveCustomer(customer);
 		return addCustomer;
 	}
 
 	// PUT'S ------------------------
 	@PutMapping("/update{id}")
-	public Customer updateCustomer(@RequestBody Customer updateCustomer, @PathVariable Integer id) {
+	public Customer updateCustomer(@RequestBody CustomerDto updateCustomerDTO, @PathVariable Integer id) {
+		Customer updateCustomer = service.fromDTO(updateCustomerDTO);
 		updateCustomer.setId(id);
 		return service.saveCustomer(updateCustomer);
 	}

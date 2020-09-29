@@ -63,13 +63,15 @@ public class RoomController {
 
 	// POST'S ------------------------
 	@PostMapping("/add")
-	public Room addRoom(@RequestBody Room room) {
+	public Room addRoom(@RequestBody RoomDto roomDTO) {
+		Room room = service.fromDTO(roomDTO);
 		return service.saveRoom(room);
 	}
 
 	// PUT'S ------------------------
 	@PutMapping("/update{id}")
-	public Room updateRoom(@RequestBody Room updateRoom, @PathVariable Integer id) {
+	public Room updateRoom(@RequestBody RoomDto updateRoomDTO, @PathVariable Integer id) {
+		Room updateRoom = service.fromDTO(updateRoomDTO);
 		updateRoom.setId(id);
 		return service.saveRoom(updateRoom);
 	}

@@ -2,6 +2,8 @@ package com.hotel45.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotNull;
+
 import com.hotel45.model.Room;
 import com.hotel45.other.StatusClean;
 import com.hotel45.other.TypeOfRoom;
@@ -10,9 +12,14 @@ public class RoomDto implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
+	
+	@NotNull(message = "This field is mandatory")
 	private TypeOfRoom typeOfRoom;
+	
 	private StatusClean statusClean;
+	
 	private double costPerDay;
+	
 	private boolean isAvailable;
 	
 	public RoomDto() {
@@ -59,11 +66,11 @@ public class RoomDto implements Serializable {
 		this.costPerDay = costPerDay;
 	}
 
-	public boolean isAvailable() {
+	public boolean getIsAvailable() {
 		return isAvailable;
 	}
 
-	public void setAvailable(boolean isAvailable) {
+	public void setIsAvailable(boolean isAvailable) {
 		this.isAvailable = isAvailable;
 	}	
 
