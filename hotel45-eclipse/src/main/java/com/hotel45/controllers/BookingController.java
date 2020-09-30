@@ -37,9 +37,9 @@ public class BookingController {
 	}
 
 	@GetMapping("/{id}")
-	public BookingDto listBookingById(@PathVariable Integer id) {
-		BookingDto bookingDto = new BookingDto(service.findBookingById(id));
-		return bookingDto;
+	public Booking listBookingById(@PathVariable Integer id) {
+//		BookingDto bookingDto = new BookingDto(service.findBookingById(id));
+		return service.findBookingById(id);
 	}
 
 	@GetMapping("/customer{id}")

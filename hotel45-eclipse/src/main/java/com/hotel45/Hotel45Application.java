@@ -43,7 +43,7 @@ public class Hotel45Application implements CommandLineRunner {
 		Room room4 = new Room(TypeOfRoom.ECONOMIC,StatusClean.USED,50, true);
 
 		
-		Customer customer1 = new Customer("Dani", "Valente", "Rio de Janeiro", "+351 935 125 220", "ddani.daraujo@gmail.com");
+		Customer customer1 = new Customer("Dani", "Valente", "Rio de Janeiro", "935125220", "ddani.daraujo@gmail.com");
 		Customer customer2 = new Customer("Carlos", "Rocha", "Lisboa", "915845561", "carlosrocha@gmail.com");
 		Customer customer3 = new Customer("Andre", "Pisco", "Madri", "910559402", "andrepisco@gmail.com");
 		Customer customer4 = new Customer("Nuno", "Pina", "Marte", "910667502", "nunopina@gmail.com");
