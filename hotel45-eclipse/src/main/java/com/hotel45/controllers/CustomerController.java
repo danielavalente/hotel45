@@ -61,7 +61,7 @@ public class CustomerController {
 	@PutMapping("/update{id}")
 	public Customer updateCustomer(@RequestBody CustomerDto updateCustomerDTO, @PathVariable Integer id) {
 		Customer updateCustomer = service.fromDTO(updateCustomerDTO);
-		updateCustomer.setId(id);
+		updateCustomer.setCustomerId(id);
 		return service.saveCustomer(updateCustomer);
 	}
 

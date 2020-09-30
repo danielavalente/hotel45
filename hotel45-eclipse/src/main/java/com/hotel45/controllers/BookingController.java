@@ -70,7 +70,7 @@ public class BookingController {
 	@PutMapping("/update{id}")
 	public Booking updateBooking(@Valid @RequestBody BookingDto updateBookingDTO, @PathVariable Integer id) {
 		Booking updateBooking = service.fromDTO(updateBookingDTO);
-		updateBooking.setId(id);
+		updateBooking.setBookingId(id);
 		return service.saveBooking(updateBooking);
 	}
 	

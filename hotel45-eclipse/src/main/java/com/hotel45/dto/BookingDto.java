@@ -11,7 +11,7 @@ import com.hotel45.model.Booking;
 public class BookingDto implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	private Integer id;
+	private Integer bookingId;
 	
 	@NotNull(message = "This field is mandatory")
 	@JsonFormat(pattern= "dd/MM/yyyy")
@@ -23,7 +23,7 @@ public class BookingDto implements Serializable {
 	
     private double totalCost;
     
-    @NotNull(message = "This field is mandatory")
+//    @NotNull(message = "This field is mandatory")
     private Integer customerId;
     
     @NotNull(message = "This field is mandatory")
@@ -34,20 +34,20 @@ public class BookingDto implements Serializable {
     }
 
 	public BookingDto(Booking booking) {
-		this.id = booking.getId();
+		this.bookingId = booking.getBookingId();
 		this.checkInDate = booking.getCheckInDate();
 		this.checkOutDate = booking.getCheckOutDate();
 		this.totalCost = booking.getTotalCost();
-		this.customerId = new CustomerDto(booking.getCustomer()).getId();
+		this.customerId = new CustomerDto(booking.getCustomer()).getCustomerId();
 		this.roomId = new RoomDto(booking.getRoom()).getId();
 	}
 
-	public Integer getId() {
-		return id;
+	public Integer getBookingId() {
+		return bookingId;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setBookingId(Integer id) {
+		this.bookingId = id;
 	}
 
 	public Date getCheckInDate() {

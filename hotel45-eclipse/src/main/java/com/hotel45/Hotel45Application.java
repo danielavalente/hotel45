@@ -59,6 +59,7 @@ public class Hotel45Application implements CommandLineRunner {
 		
 		
 
+
 		room1.getBookingList().addAll(Arrays.asList(booking1, booking2));
 		room2.getBookingList().addAll(Arrays.asList(booking3));
 		room3.getBookingList().addAll(Arrays.asList(booking4));

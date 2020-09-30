@@ -2,14 +2,14 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
+  <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"
+        ></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="mystyle.css">
-  <script
-            src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"
-        ></script>
   <script src="myjavascript.js"></script>
   <title>Make a new booking at Hotel 45</title>
 </head>
@@ -49,8 +49,7 @@
           <form class="searchForm">
             <div class="searchBox">
             <div class="form-group mx-sm-6 mb-0">
-              <label class="sr-only" for="inputSearch2">Search Guest</label>
-              <input type="text" class="form-control" id="inputSearch" placeholder="Search Guest...">
+              <input type="text" class="form-control" id="inputSearch" placeholder="Search guest or create a new one bellow...">
               </label>
               <div class="list-group">
                 <ul class="searchResults" id="empty">
@@ -64,9 +63,9 @@
         <hr></hr>
         <form>
           <div class="form-row">
-            <div  class="form-group col-md-12">
-              <label for="inputCustomerId">Id</label>
-              <input type="text" class="form-control" name="CustomerId" id="inputCustomerId">
+            <div style="display: none;" class="form-group col-md-12">
+              <label for="inputCustomerId">Customer Id</label>
+              <input type="text" class="form-control" name="customerId" id="inputCustomerId">
             </div>
           </div>
           <div class="form-row">
@@ -98,21 +97,27 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputCheckin">Check-in</label>
-              <input type="text" class="form-control" name="checkInDate" id="inputCheckin">
+              <input type="text" class="form-control" name="checkInDate" id="inputCheckIn" value="09-09-2020">
             </div>
             <div class="form-group col-md-6">
               <label for="inputCheckOut">Check-out</label>
-              <input type="text" class="form-control" name="checkOutDate" id="inputCheckOut">
+              <input type="text" class="form-control" name="checkOutDate" id="inputCheckOut" value="25-09-2020">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputRoomType">Room Type</label>
-              <input type="text" class="form-control" name="roomType" id="inputRoomType">
+              <select class="custom-select selectRoomType" id="inputRoomTypeSelect" >
+                <option>Choose a type...</option>
+                
+              </select>
             </div>
             <div class="form-group col-md-6">
               <label for="inputRoomId">Room Number</label>
-              <input type="text" class="form-control" name="id" id="inputRoomId">
+              <select class="custom-select selectRoomNumber" name="roomId" id="inputRoomNumberSelect">
+                <option selected>Choose a number...</option>
+
+              </select>
             </div>
           </div>
           <button id="bookButton" type="button" class="btn float-right btn-danger">Book</button>

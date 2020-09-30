@@ -11,7 +11,7 @@ import com.hotel45.other.TypeOfRoom;
 public class RoomDto implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	private Integer id;
+	private Integer roomId;
 	
 	@NotNull(message = "This field is mandatory")
 	private TypeOfRoom typeOfRoom;
@@ -27,7 +27,7 @@ public class RoomDto implements Serializable {
 	}
 
 	public RoomDto(Room room) {
-		this.id = room.getId();
+		this.roomId = room.getId();
 		this.typeOfRoom = room.getTypeOfRoom();
 		this.statusClean = room.getStatusClean();
 		this.costPerDay = room.getCostPerDay();
@@ -35,11 +35,11 @@ public class RoomDto implements Serializable {
 	}
 
 	public Integer getId() {
-		return id;
+		return roomId;
 	}
 
 	public void setId(Integer id) {
-		this.id = id;
+		this.roomId = id;
 	}
 
 	public TypeOfRoom getTypeOfRoom() {

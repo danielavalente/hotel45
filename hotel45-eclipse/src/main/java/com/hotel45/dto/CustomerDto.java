@@ -11,7 +11,7 @@ import com.hotel45.model.Customer;
 public class CustomerDto implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	private Integer id;
+	private Integer customerId;
 	
 	@NotNull(message = "This field is mandatory")
 	private String firstName;
@@ -35,7 +35,7 @@ public class CustomerDto implements Serializable {
 	}
 
 	public CustomerDto(Customer customer) {
-		this.id = customer.getId();
+		this.customerId = customer.getCustomerId();
 		this.firstName = customer.getFirstName();
 		this.lastName = customer.getLastName();
 		Address = customer.getAddress();
@@ -43,12 +43,12 @@ public class CustomerDto implements Serializable {
 		this.email = customer.getEmail();
 	}
 
-	public Integer getId() {
-		return id;
+	public Integer getCustomerId() {
+		return customerId;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setCustomerId(Integer id) {
+		this.customerId = id;
 	}
 
 	public String getFirstName() {

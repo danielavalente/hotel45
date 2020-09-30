@@ -88,6 +88,26 @@ public class RoomService {
 
 	}
 	
+	public ArrayList<Integer> findNumberOfFreeRoomsBetweenDates (Date checkInDate, Date checkOutDate, TypeOfRoom roomType) {
+		List<Room> allRoomsByType = roomDao.findRoomsByType(roomType);
+		List<Booking> allBookingsbetweenDates = bookingDao.findBookingsBetweenDates(checkInDate,checkOutDate);
+		
+		ArrayList<Integer> allRoomsIds = new ArrayList<>();
+		for (Room room : allRoomsByType) {
+			allRoomsIds.add(room.getId());
+		}
+		
+		ArrayList<Integer> allBookingsbetweenDatesRoomId = new ArrayList<>();
+		for (Booking booking : allBookingsbetweenDates) {
+			allBookingsbetweenDatesRoomId.add(booking.getRoom().getId());
+		}
+		
+		allRoomsIds.removeAll(allBookingsbetweenDatesRoomId);
+		
+		return allRoomsIds;
+
+	}
+	
 	//Converter
 	public Room fromDTO (RoomDto roomDTO) {
 		return new Room(
