@@ -85,11 +85,11 @@ public class Room implements Serializable {
 		this.costPerDay = costPerDay;
 	}
 
-	public Integer getId() {
+	public Integer getRoomId() {
 		return roomId;
 	}
 
-	public void setId(Integer id) {
+	public void setRoomId(Integer id) {
 		this.roomId = id;
 	}
 

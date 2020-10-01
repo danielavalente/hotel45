@@ -20,4 +20,8 @@ public interface RoomDao extends JpaRepository<Room, Integer> {
 	
 	@Query("SELECT room FROM Room room WHERE room.typeOfRoom = :roomType")
 	public List<Room> findRoomsByType(@Param("roomType") TypeOfRoom roomType);
+	
+//	@Query("SELECT room from Room room INNER JOIN room.bookingList WHERE room.id NOT IN"
+//			+ "(SELECT room FROM Room room INNER JOIN room.bookingList booking WHERE booking.checkInDate < '2020-09-16')")
+//	public List<Room> findRoomsAvailableBetweenDates();
 }

@@ -69,12 +69,12 @@ public class RoomService {
 		
 		ArrayList<Integer> allRoomsIds = new ArrayList<>();
 		for (Room room : allRooms) {
-			allRoomsIds.add(room.getId());
+			allRoomsIds.add(room.getRoomId());
 		}
 		
 		ArrayList<Integer> allBookingsbetweenDatesRoomId = new ArrayList<>();
 		for (Booking booking : allBookingsbetweenDates) {
-			allBookingsbetweenDatesRoomId.add(booking.getRoom().getId());
+			allBookingsbetweenDatesRoomId.add(booking.getRoom().getRoomId());
 		}
 		
 		allRoomsIds.removeAll(allBookingsbetweenDatesRoomId);
@@ -94,12 +94,12 @@ public class RoomService {
 		
 		ArrayList<Integer> allRoomsIds = new ArrayList<>();
 		for (Room room : allRoomsByType) {
-			allRoomsIds.add(room.getId());
+			allRoomsIds.add(room.getRoomId());
 		}
 		
 		ArrayList<Integer> allBookingsbetweenDatesRoomId = new ArrayList<>();
 		for (Booking booking : allBookingsbetweenDates) {
-			allBookingsbetweenDatesRoomId.add(booking.getRoom().getId());
+			allBookingsbetweenDatesRoomId.add(booking.getRoom().getRoomId());
 		}
 		
 		allRoomsIds.removeAll(allBookingsbetweenDatesRoomId);
@@ -107,6 +107,10 @@ public class RoomService {
 		return allRoomsIds;
 
 	}
+	
+//	public List<Room> findRoomsAvailableBetweenDates() {
+//		return roomDao.findRoomsAvailableBetweenDates();
+//	}
 	
 	//Converter
 	public Room fromDTO (RoomDto roomDTO) {

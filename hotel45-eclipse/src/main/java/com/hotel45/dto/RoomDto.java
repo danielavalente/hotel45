@@ -27,18 +27,18 @@ public class RoomDto implements Serializable {
 	}
 
 	public RoomDto(Room room) {
-		this.roomId = room.getId();
+		this.roomId = room.getRoomId();
 		this.typeOfRoom = room.getTypeOfRoom();
 		this.statusClean = room.getStatusClean();
 		this.costPerDay = room.getCostPerDay();
 		this.isAvailable = room.getIsAvailable();
 	}
 
-	public Integer getId() {
+	public Integer getRoomId() {
 		return roomId;
 	}
 
-	public void setId(Integer id) {
+	public void setRoomId(Integer id) {
 		this.roomId = id;
 	}
 

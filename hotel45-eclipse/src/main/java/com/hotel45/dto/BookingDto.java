@@ -39,7 +39,7 @@ public class BookingDto implements Serializable {
 		this.checkOutDate = booking.getCheckOutDate();
 		this.totalCost = booking.getTotalCost();
 		this.customerId = new CustomerDto(booking.getCustomer()).getCustomerId();
-		this.roomId = new RoomDto(booking.getRoom()).getId();
+		this.roomId = new RoomDto(booking.getRoom()).getRoomId();
 	}
 
 	public Integer getBookingId() {

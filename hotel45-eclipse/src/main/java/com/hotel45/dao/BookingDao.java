@@ -21,7 +21,6 @@ public interface BookingDao extends JpaRepository<Booking, Integer> {
 	
 	@Query("SELECT booking FROM Booking booking WHERE customer.id = :id AND booking.checkOutDate > :datenow")
 	public List<Booking> findActiveBookingsByCustomer(@Param("id") Integer id, @Param("datenow") Date datenow);
-	
 
 	@Query("SELECT booking FROM Booking booking WHERE booking.checkInDate < :checkOutDate AND booking.checkOutDate > :checkInDate")
 	public List<Booking> findBookingsBetweenDates(@Param("checkInDate") Date checkInDate, @Param("checkOutDate") Date checkOutDate);

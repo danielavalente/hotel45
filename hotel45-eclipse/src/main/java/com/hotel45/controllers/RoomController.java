@@ -69,6 +69,13 @@ public class RoomController {
 		
 		return freeRooms;
 	}
+	
+//	@GetMapping("freeroomsava")
+//	public List<Room> listAvailableRoomsBetweenDates() {
+//		List<Room> freeRooms = service.findRoomsAvailableBetweenDates();
+//		
+//		return freeRooms;
+//	}
 
 	// POST'S ------------------------
 	@PostMapping("/add")
@@ -81,7 +88,7 @@ public class RoomController {
 	@PutMapping("/update{id}")
 	public Room updateRoom(@RequestBody RoomDto updateRoomDTO, @PathVariable Integer id) {
 		Room updateRoom = service.fromDTO(updateRoomDTO);
-		updateRoom.setId(id);
+		updateRoom.setRoomId(id);
 		return service.saveRoom(updateRoom);
 	}
 
