@@ -1,128 +1,62 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="utf-8">
-  <script
-            src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"
-        ></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="mystyle.css">
   <script src="myjavascript.js"></script>
-  <title>Make a new booking at Hotel 45</title>
+  <title>Index</title>
 </head>
-  <body>
-    <div class="fullPage">
-      <div class="menuContent">
-        <div class="menu">
-          <ul class="list-group" id="menuOptionsGroup">
-            <img class="logo" src="https://logos-download.com/wp-content/uploads/2016/10/Hotel_Indigo_logo.png" alt="Logo Hotel 45">
-            <li class="list-group-item menuOptions"><a class="menuList" href="">
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.5 10.995V14.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z"/>
-                <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
-              </svg>
-            Home</a></li>
-              <li class="list-group-item menuOptions"><a class="menuList" href="">
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-key-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-                </svg>
-              Rooms</a></li>
-              <li class="list-group-item menuOptions"><a class="menuList" href="">
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                </svg>
-              Guests</a></li>
-              <li class="list-group-item menuOptions"><a class="menuList" href="">
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bookmark-check-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M4 0a2 2 0 0 0-2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4zm6.854 5.854a.5.5 0 0 0-.708-.708L7.5 7.793 6.354 6.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
-                </svg>
-              Book now</a></li>
-            </ul>
-        </div>
-        </div>
-      <div class="pageContent">
-        <div class="container">
-          <h5 class="title">Search or create a guest</h5>
-          <form class="searchForm">
-            <div class="searchBox">
-            <div class="form-group mx-sm-6 mb-0">
-              <input type="text" class="form-control" id="inputSearch" placeholder="Search guest or create a new one bellow...">
-              </label>
-              <div class="list-group">
-                <ul class="searchResults" id="empty">
-                  
-                </ul>
-          </div>
-          </div>
-          </div>
-            <button id="searchButton" type="button" class="btn btn-danger mb-0" value="search">search</button>
-        </form>
-        <hr></hr>
-        <form>
-          <div class="form-row">
-            <div style="display: none;" class="form-group col-md-12">
-              <label for="inputCustomerId">Customer Id</label>
-              <input type="text" class="form-control" name="customerId" id="inputCustomerId">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputFirstName">First Name</label>
-              <input type="text" class="form-control" name="firstName" id="inputFirstName">
-            </div>
-            <div class="form-group col-md-6">
-              <label for="inputLastName">Last Name</label>
-              <input type="text" class="form-control" name="lastName" id="inputLastName">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-3">
-              <label for="inputCity">City</label>
-              <input type="text" class="form-control" name="address" id="inputCity">
-            </div>
-            <div class="form-group col-md-3">
-              <label for="inputPhone">Phone</label>
-              <input type="text" class="form-control" name="phone" id="inputPhone">
-            </div>
-            <div class="form-group col-md-6">
-              <label for="inputemail">Email</label>
-              <input type="email" class="form-control" name="email" id="inputemail">
-            </div>
-          </div>
-          <hr></hr>
-          <h5 class="title">Make booking</h5>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputCheckin">Check-in</label>
-              <input type="text" class="form-control" name="checkInDate" id="inputCheckIn" value="09-09-2020">
-            </div>
-            <div class="form-group col-md-6">
-              <label for="inputCheckOut">Check-out</label>
-              <input type="text" class="form-control" name="checkOutDate" id="inputCheckOut" value="25-09-2020">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputRoomType">Room Type</label>
-              <select class="custom-select selectRoomType" id="inputRoomTypeSelect" >
-                <option>Choose a type...</option>
-                
-              </select>
-            </div>
-            <div class="form-group col-md-6">
-              <label for="inputRoomId">Room Number</label>
-              <select class="custom-select selectRoomNumber" name="roomId" id="inputRoomNumberSelect">
-                <option selected>Choose a number...</option>
 
-              </select>
-            </div>
-          </div>
-          <button id="bookButton" type="button" class="btn float-right btn-danger">Book</button>
-        </form>
-        </div>
+<body>
+  <div class="fullPage">
+    <div class="menuContent">
+      <div class="menu">
+        <ul class="list-group" id="menuOptionsGroup">
+          <img class="logo" src="https://logos-download.com/wp-content/uploads/2016/10/Hotel_Indigo_logo.png"
+            alt="Logo Hotel 45">
+          <li class="list-group-item menuOptions"><a class="menuList" id="homeMenu" onclick=openHome()>
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door-fill" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M6.5 10.995V14.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z" />
+                <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+              </svg>
+              Home</a></li>
+          <li class="list-group-item menuOptions"><a class="menuList" id="roomMenu" onclick=openRoomsPage()>
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-key-fill" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+              </svg>
+              Rooms</a></li>
+          <li class="list-group-item menuOptions"><a class="menuList" id="guestMenu" onclick=openGuestsPage()>
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+              </svg>
+              Guests</a></li>
+          <li class="list-group-item menuOptions"><a class="menuList" id="bookMenu" onclick=openNewBooking()>
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bookmark-check-fill" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M4 0a2 2 0 0 0-2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4zm6.854 5.854a.5.5 0 0 0-.708-.708L7.5 7.793 6.354 6.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+              </svg>
+              Book now</a></li>
+        </ul>
       </div>
-  </body>
+    </div>
+    <div class="pageContent">
+      <div class="container" id="containerPage">
+
+      </div>
+    </div>
+</body>
+
 </html>

@@ -41,17 +41,13 @@
   /* border: 3px solid red; */
 }
 
-.menuList {
+.menuOptions {
   color: #373A3C;
 }
 
-.menuList:hover {
+.menuOptions:hover {
   color: #8D8D8D;
   text-decoration:none;
-}
-
-.menuList:active {
-  color: #D30000;
 }
 
 .bi {
@@ -115,4 +111,21 @@
 hr {
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+
+.nav-link {
+  color: #D30000;
+}
+
+.nav-link:hover {
+  color: #A90000;
+}
+
+.table {
+  font-size: small;
+}
+
+.titleRooms {
+  margin-top: 20px;
 }

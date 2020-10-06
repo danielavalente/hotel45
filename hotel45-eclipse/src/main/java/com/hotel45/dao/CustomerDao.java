@@ -17,5 +17,7 @@ public interface CustomerDao extends JpaRepository<Customer, Integer> {
 	@Query("SELECT customer FROM Customer customer WHERE FIRST_NAME LIKE lower(concat('%',:searchTerm,'%')) OR LAST_NAME LIKE lower(concat('%',:searchTerm,'%'))" )
 	public List<Customer> findBySearchTerm(@Param("searchTerm") String searchTerm);
 	
+	@Transactional(readOnly = true)
+	Customer findByEmail(String email);
 
 }

@@ -20,7 +20,7 @@ public class CustomerDto implements Serializable {
     private String lastName;
 	
 	@NotNull(message = "This field is mandatory")
-    private String Address;
+    private String address;
 	
 	@NotNull(message = "This field is mandatory")
 	@Digits(integer=9, fraction=0, message = "This field must be a phone with 9 characters")
@@ -38,7 +38,7 @@ public class CustomerDto implements Serializable {
 		this.customerId = customer.getCustomerId();
 		this.firstName = customer.getFirstName();
 		this.lastName = customer.getLastName();
-		Address = customer.getAddress();
+		this.address = customer.getAddress();
 		this.phone = customer.getPhone();
 		this.email = customer.getEmail();
 	}
@@ -68,11 +68,11 @@ public class CustomerDto implements Serializable {
 	}
 
 	public String getAddress() {
-		return Address;
+		return address;
 	}
 
 	public void setAddress(String address) {
-		Address = address;
+		this.address = address;
 	}
 
 	public String getPhone() {

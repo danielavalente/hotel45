@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Rooms List</title>
+</head>
+
+<body>
+
+    <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a onclick=clickOnAvailable() href="#available" class="nav-link active" id="available-tab" role="tab" data-toggle="tab" aria-selected="true">Available</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a onclick=clickOnUnavailable() href="#unavailable" class="nav-link" id="unavailable-tab" role="tab" data-toggle="tab" aria-selected="false">Unavailable</a>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="available" role="tabpanel" aria-labelledby="available-tab">
+            <div class="roomImage">
+                <img width="100%" src="images/room_image.svg">
+            </div>
+
+            <h4 class="titleRooms">Rooms</h4>
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Cost per day</th>
+                    <th scope="col">Available</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="listRooms">
+                  
+                </tbody>
+              </table>
+
+        </div>
+        <div class="tab-pane fade" id="unavailable" role="tabpanel" aria-labelledby="unavailable-tab">
+            <div class="roomImage">
+                <img width="100%" src="images/customer_image.svg">
+            </div>
+        </div>
+    </div>
+
+    <script> var url = "js/roomlist.js"
+        $.getScript(url);</script>
+
+</body>
+
+</html>

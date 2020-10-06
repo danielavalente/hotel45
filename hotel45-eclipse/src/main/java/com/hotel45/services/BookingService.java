@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.hotel45.controllers.exceptions.ObjectNotFoundException;
 import com.hotel45.dao.BookingDao;
 import com.hotel45.dto.BookingDto;
+import com.hotel45.dto.NewBookingDto;
 import com.hotel45.model.Booking;
 
 @Service
@@ -70,6 +71,16 @@ public class BookingService {
 	}
 	
 	//Converter
+	public Booking fromDTO(NewBookingDto newBookingDTO) {
+		Integer numberOfDays = Math.toIntExact((newBookingDTO.getCheckOutDate().getTime() - newBookingDTO.getCheckInDate().getTime()) / (1000 * 60 * 60 * 24));
+		return new Booking(
+				customerService.customerById(newBookingDTO.getCustomerId()),
+				roomService.roomById(newBookingDTO.getRoomId()),
+				newBookingDTO.getCheckInDate(),
+				newBookingDTO.getCheckOutDate(),
+				roomService.roomById(newBookingDTO.getRoomId()).getCostPerDay() * numberOfDays);
+	}
+	
 	public Booking fromDTO(BookingDto bookingDTO) {
 		Integer numberOfDays = Math.toIntExact((bookingDTO.getCheckOutDate().getTime() - bookingDTO.getCheckInDate().getTime()) / (1000 * 60 * 60 * 24));
 		return new Booking(

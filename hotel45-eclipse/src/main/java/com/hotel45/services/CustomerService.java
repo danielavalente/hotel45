@@ -46,6 +46,10 @@ public class CustomerService {
 		List<Customer> filterCustomers = customerDao.findBySearchTerm(searchTerm);
 		return filterCustomers;		
 	}
+	
+	public Customer findByEmail(String email) {
+		return customerDao.findByEmail(email);
+	}
 
 	
 	//Converter

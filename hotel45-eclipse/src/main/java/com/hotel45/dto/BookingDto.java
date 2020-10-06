@@ -14,16 +14,16 @@ public class BookingDto implements Serializable {
 	private Integer bookingId;
 	
 	@NotNull(message = "This field is mandatory")
-	@JsonFormat(pattern= "dd/MM/yyyy")
+	@JsonFormat(pattern= "dd-MM-yyyy")
 	private Date checkInDate;
 	
 	@NotNull(message = "This field is mandatory")
-	@JsonFormat(pattern= "dd/MM/yyyy")
+	@JsonFormat(pattern= "dd-MM-yyyy")
     private Date checkOutDate;
 	
     private double totalCost;
     
-//    @NotNull(message = "This field is mandatory")
+    @NotNull(message = "This field is mandatory")
     private Integer customerId;
     
     @NotNull(message = "This field is mandatory")

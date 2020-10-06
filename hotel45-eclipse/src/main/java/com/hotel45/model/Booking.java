@@ -29,10 +29,10 @@ public class Booking implements Serializable {
     @JoinColumn(name = "room_id")
     private Room room;
 
-    @JsonFormat(pattern= "dd/MM/yyyy")
+    @JsonFormat(pattern= "dd-MM-yyyy")
     private Date checkInDate;
     
-    @JsonFormat(pattern= "dd/MM/yyyy")
+    @JsonFormat(pattern= "dd-MM-yyyy")
     private Date checkOutDate;
     
     private double totalCost;
