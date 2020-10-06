@@ -64,17 +64,13 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-<<<<<<< HEAD
 		
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>6.1.5.Final</version>
 		</dependency>
-		
-=======
 
->>>>>>> 170fa968c6485d912bdbded56303d480cea68488
 	</dependencies>
 
 	<build>

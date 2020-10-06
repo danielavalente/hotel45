@@ -5,14 +5,17 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.hotel45.dao.BookingDao;
 import com.hotel45.dao.CustomerDao;
 import com.hotel45.dao.RoomDao;
+import com.hotel45.dao.UserDao;
 import com.hotel45.model.Booking;
 import com.hotel45.model.Customer;
 import com.hotel45.model.Room;
+import com.hotel45.model.Users;
 import com.hotel45.other.StatusClean;
 import com.hotel45.other.TypeOfRoom;
 
@@ -27,6 +30,12 @@ public class DBService {
 	
 	@Autowired
 	private RoomDao roomDao;
+	
+	@Autowired
+	private UserDao userDao;
+	
+	@Autowired
+	private BCryptPasswordEncoder encoder;
 	
 	public void instatiateTestDatabase() throws ParseException {
 		
@@ -65,9 +74,27 @@ public class DBService {
 		customer5.getBookingList().addAll(Arrays.asList(booking5));
 		
 		
+		Users pisco = new Users();
+		Users kiko = new Users();
+		Users dani = new Users();
+		Users nuno = new Users();
+		Users rafa = new Users();
+		pisco.setUsername("pisco");
+		pisco.setPassword(encoder.encode("piscopassword"));
+		kiko.setUsername("kiko");
+		kiko.setPassword(encoder.encode("kikopassword"));
+		dani.setUsername("dani");
+		dani.setPassword(encoder.encode("danipassword"));
+		nuno.setUsername("nuno");
+		nuno.setPassword(encoder.encode("nunopassword"));
+		rafa.setUsername("rafa");
+		rafa.setPassword(encoder.encode("rafapassword"));
+		
+		
 		roomDao.saveAll(Arrays.asList(room1, room2, room3, room4));
 		customerDao.saveAll(Arrays.asList(customer1, customer2, customer3, customer4, customer5));
 		bookingDao.saveAll(Arrays.asList(booking1, booking2, booking3, booking4, booking5));
+		userDao.saveAll(Arrays.asList(pisco,kiko,dani,nuno,rafa));
 		
 	}
 
