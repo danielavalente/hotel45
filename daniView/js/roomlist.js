@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
-    listRoomsInUse();
-
+    listRoomsAvailable();
 
 });
 
@@ -10,6 +9,8 @@ function clickOnUnavailable() {
     $('#available-tab').removeClass('active');
     $('#unavailable').addClass('show active');
     $('#unavailable-tab').addClass('active');
+    $('.listAvailableRooms').empty();
+    listRoomsUnavailable();
 }
 
 function clickOnAvailable() {
@@ -17,16 +18,18 @@ function clickOnAvailable() {
     $('#unavailable-tab').removeClass('active');
     $('#available').addClass('show active');
     $('#available-tab').addClass('active');
+    $('.listUnavailableRooms').empty();
+    listRoomsAvailable();
 }
 
-function listRoomsInUse() {
+function listRoomsAvailable() {
 
     $.ajax({
         url: 'http://localhost:8085/api/rooms/available',
         type: 'GET',
         async: true,
         success: function (response) {
-            loadRoomsInUse(response)
+            loadRoomsAvailable(response)
         },
         error: function () {
             errorCallback();
@@ -35,21 +38,63 @@ function listRoomsInUse() {
 
 }
 
-function loadRoomsInUse(response) {
-    console.log(response);
+function loadRoomsAvailable(response) {
+    // console.log(response);
 
-    var table = $('.listRooms');
+    var table = $('.listAvailableRooms');
 
     response.forEach((item) => {
         table.append('<tr>' +
-        '<td>' + item.roomId + '</td>' +
-        '<td>' + item.typeOfRoom + '</td>' +
-        '<td>' + item.costPerDay + '</td>' +
-        '<td>' + item.isAvailable + '</td>' + 
-        '<td>' +  + '</td>' + 
-        '</tr>')
-      });
+            '<td>' + item.roomId + '</td>' +
+            '<td>' + item.typeOfRoom + '</td>' +
+            '<td>' + item.costPerDay + '</td>' +
+            '<td>' + item.isAvailable + '</td>' +
+            '<td>' + '<a onclick=openRoomEdit() ><img height="20px" src="images/eye_edit.svg"></img></a>' + '</td>' +
+            '</tr>')
+    });
 }
+
+function listRoomsUnavailable() {
+
+    $.ajax({
+        url: 'http://localhost:8085/api/rooms/unavailable',
+        type: 'GET',
+        async: true,
+        success: function (response) {
+            loadRoomsUnavailable(response);
+        },
+        error: function () {
+            errorCallback();
+        },
+    });
+}
+
+function loadRoomsUnavailable(response) {
+    // console.log(response);
+
+    var table = $('.listUnavailableRooms');
+
+    response.forEach((item) => {
+        console.log(item);
+        table.append('<tr>' +
+            '<td>' + item.roomId + '</td>' +
+            '<td>' + item.typeOfRoom + '</td>' +
+            '<td>' + item.costPerDay + '</td>' +
+            '<td>' + item.isAvailable + '</td>' +
+            '<td>' + '<a onclick=openRoomEdit(' + item.roomId + ') ><img height="20px" src="images/eye_edit.svg"></img></a>' + '</td>' +
+            '</tr>')
+    });
+}
+
+function openRoomEdit(roomNum) {
+    window.location.hash = '#' + roomNum;
+    $('#containerPage').load("pages/room-edit.html");
+}
+
+function openRoomAdd() {
+    $('#containerPage').load("pages/room-add.html");
+}
+
 
 
 function errorCallback(request, status, error) {

@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  // openGuestsPage();
+  $('#containerPage').load("pages/room-edit.html"); 
 
   });
 
@@ -13,7 +13,7 @@ $(document).ready(function() {
   }
 
   function openRoomsPage() {
-    $('#containerPage').load("pages/guests.html"); 
+    $('#containerPage').load("pages/rooms.html"); 
     $('.menuList').css("color", "#373A3C");
     $('.menuOptions').css("background-color", "transparent");
     $('.menuOptions').css("border", "0px");
@@ -21,7 +21,7 @@ $(document).ready(function() {
   }
 
   function openGuestsPage() {
-    $('#containerPage').load("pages/rooms.html"); 
+    $('#containerPage').load("pages/guests.html"); 
     $('.menuList').css("color", "#373A3C");
     $('.menuOptions').css("background-color", "transparent");
     $('.menuOptions').css("border", "0px");

@@ -37,7 +37,8 @@
   vertical-align: middle;
   background-color: transparent;
   border: none;
-
+  font-size: large;
+  font-weight: 700;
   /* border: 3px solid red; */
 }
 
@@ -126,6 +127,51 @@ hr {
   font-size: small;
 }
 
-.titleRooms {
-  margin-top: 20px;
+.containerWithButton {
+  /* border: 3px solid red; */
+  padding-top: 20px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#buttonRoom {
+  font-size: small;
+  height: 35px;
+}
+
+#buttonFlex {
+  display: flex;
+  padding: 0;
+  background-color: transparent;
+  border: 0px;
+}
+
+#buttonFlex:hover {
+  background-color: transparent;
+  border: 0px;
+}
+
+#buttonFlex:active {
+  background-color: transparent;
+  border: 0px;
+}
+
+#buttonFlex:focus {
+  background-color: transparent;
+  border: 0px;
+}
+
+#iconArrow {
+  margin-top: 4px;
+}
+
+.containerHeader {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+#titleRoom {
+  color: slategray;
 }

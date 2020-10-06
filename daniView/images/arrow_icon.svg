@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="25" viewBox="0 0 30 25">
+  <defs>
+    <clipPath id="clip-arrow_icon">
+      <rect width="30" height="25"/>
+    </clipPath>
+  </defs>
+  <g id="arrow_icon" clip-path="url(#clip-arrow_icon)">
+    <rect width="30" height="25" fill="#fff"/>
+    <path id="left-arrow" d="M36.75,23.25H11.813l9.549-9.095a1.25,1.25,0,1,0-1.724-1.811L8.733,22.732a2.5,2.5,0,0,0,.022,3.557L19.638,36.655a1.25,1.25,0,1,0,1.724-1.81l-9.589-9.1H36.75a1.25,1.25,0,0,0,0-2.5Z" transform="translate(-8 -12)"/>
+  </g>
+</svg>

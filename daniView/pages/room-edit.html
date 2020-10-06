@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        
+    <title>Edit Room</title>
+</head>
+
+<body>
+    <div class="containerHeader">
+        <button class="btn btn-light" id="buttonFlex" onclick=openRoomList()>
+            <img height="20px" id="iconArrow" src="images/arrow_icon.svg">
+            <h5 class="title">&nbspgo back</h5>
+        </button>
+        <h5 class="title float-right" id="titleRoom">Edit room</h5>
+    </div>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="inputRoomId">Room Id</label>
+                <input type="text" class="form-control inputsRoom" name="roomId" id="inputRoomId" disabled>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputTypeOfRoom">Type of room</label>
+                <select class="custom-select selectTypeOfRoom" name="typeOfRoom" id="inputTypeOfRoom">
+                    <option selected>Choose room type...</option>
+                    <option class="roomTypeOptions" value="ECONOMIC">Economic</option>
+                    <option class="roomTypeOptions" value="EXECUTIVE">Executive</option>
+                    <option class="roomTypeOptions" value="LUXURY">Luxury</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputCostPerDay">Cost per Day [€]</label>
+                <input type="number" class="form-control inputsRoom" name="costPerDay" id="inputCostPerDay">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <div class="custom-control custom-switch float-right">
+                    <input type="checkbox" class="custom-control-input" id="isAvailable">
+                    <label class="custom-control-label" for="isAvailable">The room is available</label>
+                </div>
+            </div>
+        </div>
+
+        <button id="editRoomButton" type="button" class="btn float-right btn-danger">Edit</button>
+    </form>
+    
+    <script> var url = "js/roomedit.js"
+        $.getScript(url);</script>
+
+</body>
+</html>

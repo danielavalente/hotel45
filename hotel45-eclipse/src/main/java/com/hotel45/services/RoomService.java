@@ -19,6 +19,7 @@ import com.hotel45.dao.RoomDao;
 import com.hotel45.dto.RoomDto;
 import com.hotel45.model.Booking;
 import com.hotel45.model.Room;
+import com.hotel45.other.StatusClean;
 import com.hotel45.other.TypeOfRoom;
 
 @Service
@@ -59,6 +60,11 @@ public class RoomService {
 	// Others
 	public List<Room> findRoomsAvailable() {
 		List<Room> filterRooms = roomDao.findRoomsAvailable();
+		return filterRooms;
+	}
+	
+	public List<Room> findRoomsUnavailable() {
+		List<Room> filterRooms = roomDao.findRoomsUnavailable();
 		return filterRooms;
 	}
 
@@ -116,7 +122,7 @@ public class RoomService {
 	public Room fromDTO (RoomDto roomDTO) {
 		return new Room(
 				roomDTO.getTypeOfRoom(),
-				roomDTO.getStatusClean(),
+				StatusClean.CLEAN,
 				roomDTO.getCostPerDay(),
 				roomDTO.getIsAvailable());
 	}

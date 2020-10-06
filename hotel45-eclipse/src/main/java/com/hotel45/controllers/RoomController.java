@@ -53,6 +53,13 @@ public class RoomController {
 		List<RoomDto> roomsDTO = rooms.stream().map(obj -> new RoomDto(obj)).collect(Collectors.toList());
 		return roomsDTO;
 	}
+	
+	@GetMapping("/unavailable")
+	public List<RoomDto> findRoomsUnavailable() {
+		List<Room> rooms = service.findRoomsUnavailable();
+		List<RoomDto> roomsDTO = rooms.stream().map(obj -> new RoomDto(obj)).collect(Collectors.toList());
+		return roomsDTO;
+	}
 
 	@GetMapping("/freerooms/{checkInDate}&{checkOutDate}")
 	public Set<TypeOfRoom> listFreeRooms(@PathVariable String checkInDate, @PathVariable String checkOutDate) throws ParseException {
