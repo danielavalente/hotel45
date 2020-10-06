@@ -66,14 +66,14 @@
         </hr>
         <h5 class="title">Make booking</h5>
         <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-6" data-provide="datepicker">
                 <label for="inputCheckin">Check-in</label>
-                <input type="date" placeholder="dd-mm-yyyy" min="1997-01-01" max="2030-12-31"
+                <input type="date" placeholder="dd-mm-yyyy" min="01-01-1997" max="31-12-2030"
                 class="form-control" name="checkInDate" id="inputCheckIn">
             </div>
             <div class="form-group col-md-6">
                 <label for="inputCheckOut">Check-out</label>
-                <input type="date" placeholder="dd-mm-yyyy" min="1997-01-01" max="2030-12-31"
+                <input type="date" placeholder="dd-mm-yyyy" min="01-01-1997" max="31-12-2030"
                  class="form-control" name="checkOutDate" id="inputCheckOut">
             </div>
         </div>
@@ -96,7 +96,7 @@
         <button id="bookButton" type="button" class="btn float-right btn-danger">Book</button>
     </form>
 
-    <script> var url = "js/newbookingjs.js"
+    <script> var url = "js/newbooking.js"
         $.getScript(url);</script>
 
 </body>

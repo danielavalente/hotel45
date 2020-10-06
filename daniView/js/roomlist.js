@@ -43,13 +43,15 @@ function loadRoomsAvailable(response) {
 
     var table = $('.listAvailableRooms');
 
+    $('.roomOptions').remove();
+
     response.forEach((item) => {
-        table.append('<tr>' +
+        table.append('<tr class="roomOptions">' +
             '<td>' + item.roomId + '</td>' +
             '<td>' + item.typeOfRoom + '</td>' +
             '<td>' + item.costPerDay + '</td>' +
             '<td>' + item.isAvailable + '</td>' +
-            '<td>' + '<a onclick=openRoomEdit() ><img height="20px" src="images/eye_edit.svg"></img></a>' + '</td>' +
+            '<td>' + '<a onclick=openRoomEdit(' + item.roomId + ') ><img height="20px" src="images/eye_edit.svg"></img></a>' + '</td>' +
             '</tr>')
     });
 }
@@ -74,9 +76,10 @@ function loadRoomsUnavailable(response) {
 
     var table = $('.listUnavailableRooms');
 
+    $('.roomOptions').remove();
+
     response.forEach((item) => {
-        console.log(item);
-        table.append('<tr>' +
+        table.append('<tr class="roomOptions">' +
             '<td>' + item.roomId + '</td>' +
             '<td>' + item.typeOfRoom + '</td>' +
             '<td>' + item.costPerDay + '</td>' +
@@ -94,7 +97,6 @@ function openRoomEdit(roomNum) {
 function openRoomAdd() {
     $('#containerPage').load("pages/room-add.html");
 }
-
 
 
 function errorCallback(request, status, error) {

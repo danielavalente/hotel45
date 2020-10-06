@@ -52,4 +52,10 @@ function addRoom() {
           },
         });
 
+        openRoomList();
+
+}
+
+function openRoomList() {
+  $('#containerPage').load("pages/rooms.html");
 }

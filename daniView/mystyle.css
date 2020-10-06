@@ -1,12 +1,13 @@
 .fullPage {
   display: flex;
-  height: 100vh;
+  height: 100%;
   /* border: 3px solid yellow; */
 }
 
 .menuContent {
   width: 300px;
-  height: auto;
+  min-height: 100vh;
+  max-height: 100%;
   align-items: center;
   background-color: #F6F6F6;
   /* border: 3px solid blue; */
@@ -15,7 +16,6 @@
 .pageContent {
   width: 100%;
   height: auto;
-  /* overflow: hidden; */
   /* border: 3px solid green; */
 }
 
@@ -174,4 +174,9 @@ hr {
 
 #titleRoom {
   color: slategray;
+}
+
+.createNewCustomer {
+  color: #D30000;
+  text-decoration: underline;
 }

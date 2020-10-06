@@ -1,5 +1,6 @@
 package com.hotel45.controllers;
 
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -63,6 +64,12 @@ public class BookingController {
 		List<BookingDto> customersFoundDTO = customersFound.stream().map(obj -> new BookingDto(obj))
 				.collect(Collectors.toList());
 		return customersFoundDTO;
+	}
+	
+	@GetMapping("/activebookings")
+	public List<Booking> listActiveBookings() {
+		Date date = new Date();
+		return service.findBookingsBetweenDates(date, date);
 	}
 
 	// POST'S ------------------------

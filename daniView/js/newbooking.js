@@ -11,6 +11,8 @@ $(document).ready(function() {
 
     $('.inputsCustomer').prop('disabled', true);
 
+   
+
   });
   
   // loads guests by search
@@ -43,7 +45,7 @@ $(document).ready(function() {
     
           $('.searchResults').empty();
 
-          table.append('<li id="itemLink" class="list-group-item"><a onclick="createNewCustomer()">Create a new customer</a></li>');
+          table.append('<li id="itemLink" class="list-group-item createNewCustomer"><a onclick="createNewCustomer()">Create a new customer</a></li>');
     
           response.forEach((item) => {
           table.append('<li id="itemLink" class="list-group-item"><a onclick="getCustomer(' + item.customerId + ')">' + item.firstName + ' ' + item.lastName + '</a></li>');
@@ -85,8 +87,8 @@ $(document).ready(function() {
     
     //Check to Get Room Types
     function checkIfDatesChangedforRoomType() {
-      var checkInDateField = $('#inputCheckIn').val();
-      var checkOutDateField = $('#inputCheckOut').val();
+      var checkInDateField = formatDate($('#inputCheckIn').val());
+      var checkOutDateField = formatDate($('#inputCheckOut').val());
 
       if(checkInDateField == "" || checkOutDateField == "") {
         // console.log("date missing...")
@@ -203,9 +205,9 @@ $(document).ready(function() {
       var lastNameBooking = $('#inputLastName').val();
       var addressBooking = $('#inputCity').val();
       var phoneBooking = $('#inputPhone').val();
-      var emailBooking = $('#inputEmail').val();
-      var checkInBooking = $('#inputCheckIn').val();
-      var checkOutBooking = $('#inputCheckOut').val();
+      var emailBooking = $('#inputemail').val();
+      var checkInBooking = formatDate($('#inputCheckIn').val());
+      var checkOutBooking = formatDate($('#inputCheckOut').val());
       var roomIdBooking = $('#inputRoomNumberSelect').val();
 
       var newBookingUser = '{' +
@@ -218,7 +220,7 @@ $(document).ready(function() {
         '"checkInDate"' + ':"' + checkInBooking + '",' +
         '"checkOutDate"' + ':"' + checkOutBooking + '",' +
         '"roomId"' + ':' + roomIdBooking +'}';
-      // console.log(newBookingUser);
+      console.log(newBookingUser);
       
         $.ajax({
         url: 'http://localhost:8085/api/bookings/add',
@@ -227,7 +229,8 @@ $(document).ready(function() {
           async: true,
           contentType: 'application/json',
         success: function (data) {
-          console.log(data);
+          // console.log(data);
+          $('#containerPage').load("pages/newbooking.html");
           alert("success");
         },
         error: function () {
@@ -238,4 +241,9 @@ $(document).ready(function() {
 
     function errorCallback(request, status, error) {
       console.log('Sorry, something went wrong...');
+  }
+
+  function formatDate(oldDate) {
+      var datesplit = oldDate.split("-");
+      return datesplit[2] + '-' + datesplit[1] + '-' + datesplit[0];
   }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Add Guest</title>
+</head>
+
+<body>
+
+    <div class="containerHeader">
+        <button class="btn btn-light" id="buttonFlex" onclick=openGuestList()>
+            <img height="20px" id="iconArrow" src="images/arrow_icon.svg">
+            <h5 class="title">&nbspgo back</h5>
+        </button>
+        <h5 class="title float-right" id="titleRoom">Add guest</h5>
+    </div>
+
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputFirstName">First Name</label>
+                <input type="text" class="form-control inputsCustomer" name="firstName" id="inputFirstName">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputLastName">Last Name</label>
+                <input type="text" class="form-control inputsCustomer" name="lastName" id="inputLastName">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control inputsCustomer" name="address" id="inputCity">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputPhone">Phone</label>
+                <input type="text" class="form-control inputsCustomer" name="phone" id="inputPhone">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputemail">Email</label>
+                <input type="email" class="form-control inputsCustomer" name="email" id="inputemail">
+            </div>
+        </div>
+        <button id="addCustomerButton" type="button" class="btn float-right btn-danger">add</button>
+    </form>
+
+    <script> var url = "js/guestadd.js"
+        $.getScript(url);</script>
+
+</body>
+
+</html>
