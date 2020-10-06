@@ -3,7 +3,11 @@ $(document).ready(function () {
     var editButton = $('#editRoomButton');
     editButton.click(editRoom);
 
-    listRoomId(1);
+    var numberHash = window.location.hash.split('#')[1];
+    // console.log(numberHash);
+    listRoomId(numberHash);
+
+    $('#isAvailable').attr('value', 'false');
 
     $("#isAvailable").on('change', function () {
         if ($(this).is(':checked')) {
@@ -62,20 +66,27 @@ function editRoom() {
         '"costPerDay"' + ':' + roomCost + ',' +
         '"isAvailable"' + ':' + switchAvailable + '}';
 
-        console.log(updatedRoom);
+    console.log(updatedRoom);
 
-        $.ajax({
-            url: 'http://localhost:8085/api/rooms/update' + roomId,
-            type: 'PUT',
-              data: updatedRoom,
-              async: true,
-              contentType: 'application/json',
-            success: function (data) {
-              console.log(data);
-              alert("success");
-            },
-            error: function () {
-              errorCallback();
-              },
-            });
+    $.ajax({
+        url: 'http://localhost:8085/api/rooms/update' + roomId,
+        type: 'PUT',
+        data: updatedRoom,
+        async: true,
+        contentType: 'application/json',
+        success: function (data) {
+            console.log(data);
+            alert("success");
+        },
+        error: function () {
+            errorCallback();
+        },
+    });
+
+    openRoomList();
+
 }
+
+function openRoomList() {
+    $('#containerPage').load("pages/rooms.html");
+  }

@@ -46,8 +46,8 @@ public class DBService {
 		
 		Booking booking4 = new Booking(customer1, room3, sdf.parse("01/08/2020"), sdf.parse("03/09/2020"), 1000);
 		Booking booking1 = new Booking(customer1, room1, sdf.parse("15/09/2020"), sdf.parse("20/09/2020"), 500);
-		Booking booking2 = new Booking(customer2, room1, sdf.parse("25/09/2020"), sdf.parse("30/09/2020"), 500);
-		Booking booking3 = new Booking(customer1, room2, sdf.parse("09/10/2020"), sdf.parse("10/10/2020"), 200);
+		Booking booking2 = new Booking(customer2, room1, sdf.parse("25/09/2020"), sdf.parse("07/10/2020"), 500);
+		Booking booking3 = new Booking(customer1, room2, sdf.parse("05/10/2020"), sdf.parse("10/10/2020"), 200);
 		Booking booking5 = new Booking(customer5, room4, sdf.parse("11/10/2020"), sdf.parse("13/10/2020"), 100);
 		
 		

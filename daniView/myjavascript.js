@@ -1,10 +1,11 @@
 $(document).ready(function() {
 
-  $('#containerPage').load("pages/room-edit.html"); 
+  openGuestsPage();
 
   });
 
   function openHome() {
+    window.location.hash = '#home';
     $('#containerPage').load("pages/home.html"); 
     $('.menuList').css("color", "#373A3C");
     $('.menuOptions').css("background-color", "transparent");
@@ -13,6 +14,7 @@ $(document).ready(function() {
   }
 
   function openRoomsPage() {
+    window.location.hash = '#rooms';
     $('#containerPage').load("pages/rooms.html"); 
     $('.menuList').css("color", "#373A3C");
     $('.menuOptions').css("background-color", "transparent");
@@ -21,6 +23,7 @@ $(document).ready(function() {
   }
 
   function openGuestsPage() {
+    window.location.hash = '#guests';
     $('#containerPage').load("pages/guests.html"); 
     $('.menuList').css("color", "#373A3C");
     $('.menuOptions').css("background-color", "transparent");
@@ -29,6 +32,7 @@ $(document).ready(function() {
   }
 
   function openNewBooking() {
+    window.location.hash = '#makebooking';
     $('#containerPage').load("pages/newbooking.html"); 
     $('.menuList').css("color", "#373A3C");
     $('.menuOptions').css("background-color", "transparent");
