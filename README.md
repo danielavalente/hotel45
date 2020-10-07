@@ -20,5 +20,18 @@ Group:
 <hr></hr>
 
 <p>
-<img src="" alt="addRoomPage">
+<img src="https://raw.githubusercontent.com/danielavalente/hotel45/master/daniView/images/room-print.png" alt="Available Rooms Page">
 </p>
+
+<p>
+<img src="https://raw.githubusercontent.com/danielavalente/hotel45/master/daniView/images/guestsinrooms-print.png" alt="Guests in Rooms Page">
+</p>
+
+<p>
+<img src="https://raw.githubusercontent.com/danielavalente/hotel45/master/daniView/images/guests-print.png" alt="All Guests Page">
+</p>
+
+<p>
+<img src="https://raw.githubusercontent.com/danielavalente/hotel45/master/daniView/images/search-print.png" alt="Make a Booking Page">
+</p>
+
